@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Package Details - MaplePrints | 1000 Business Cards $250</title>
+    <meta name="description" content="Detailed package information for premium business cards. 1000 cards for $250 with free NFC keychains, foil options, and hand-in-hand designer support.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    
+    <style>
+        /* Import base styles from index.html */
+        :root {
+            --bg-primary: #FAF9F6;
+            --bg-secondary: #FFA872;
+            --text-primary: #1C1C1C;
+            --text-secondary: #555555;
+            --cta-primary: #FF4081;
+            --accent-gold: #D9A645;
+            --interactive-cyan: #00BFA5;
+            --white: #FFFFFF;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-heavy: rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        .grid { display: grid; gap: 2rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(217, 166, 69, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--cta-primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-height: 44px;
+            min-width: 120px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cta-primary), #FF6B9D);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #E91E63, var(--cta-primary));
+            box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cta-primary);
+            border: 2px solid var(--cta-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cta-primary);
+            color: var(--white);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--bg-primary), #F5F3F0);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-title {
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Package Details */
+        .package-hero {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .package-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .package-hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-display {
+            background: linear-gradient(135deg, var(--cta-primary), #FF6B9D);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(255, 64, 129, 0.3);
+        }
+
+        .current-price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            opacity: 0.8;
+            margin-right: 1rem;
+        }
+
+        .savings {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .package-image {
+            text-align: center;
+        }
+
+        .package-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px var(--shadow-medium);
+        }
+
+        /* What's Included */
+        .included-section {
+            padding: 80px 0;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .included-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--cta-primary);
+        }
+
+        .included-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px var(--shadow-medium);
+        }
+
+        .included-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--cta-primary), #FF6B9D);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .included-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .included-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .comparison-table {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            margin-top: 3rem;
+        }
+
+        .table-header {
+            background: linear-gradient(135deg, var(--text-primary), #333);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            font-weight: 600;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .table-cell:first-child {
+            justify-content: flex-start;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .check-icon {
+            color: var(--interactive-cyan);
+            font-size: 1.2rem;
+        }
+
+        .cross-icon {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        /* Process Timeline */
+        .process-section {
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--cta-primary), var(--accent-gold));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: var(--cta-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            z-index: 2;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 64, 129, 0.1);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: var(--cta-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--cta-primary), #FF6B9D);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--cta-primary);
+            font-weight: 700;
+        }
+
+        .btn-white:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .package-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .timeline-number {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .table-cell {
+                justify-content: center;
+                text-align: center !important;
+            }
+
+            .table-cell:first-child {
+                font-weight: 700;
+                background: rgba(255, 64, 129, 0.1);
+            }
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="resources/maple-logo.png" alt="MaplePrints Logo">
+                MaplePrints
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="package.html" class="active">Package</a></li>
+                <li><a href="design.html">Design Options</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" data-whatsapp="general-inquiry">Start Your Design</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Premium Business Card Package</h1>
+            <p class="page-subtitle">Everything you need for professional networking success, with hand-in-hand designer support</p>
+        </div>
+    </section>
+
+    <!-- Package Hero -->
+    <section class="package-hero">
+        <div class="container">
+            <div class="package-hero-content">
+                <div class="package-hero-text">
+                    <h2>The Complete Professional Package</h2>
+                    <p>Our most popular business card package includes everything you need to make a lasting impression. From premium materials to expert design support, we've thought of every detail.</p>
+                    
+                    <div class="price-display">
+                        <div class="current-price">$250</div>
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">
+                            <span class="original-price">$300</span>
+                            <span style="font-size: 1rem;">Limited Time Offer</span>
+                        </div>
+                        <div class="savings">You Save $50!</div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary btn-large" data-whatsapp="existing-design">Order Now</button>
+                        <button class="btn btn-secondary btn-large" data-whatsapp="need-design">Need Design Help</button>
+                    </div>
+                </div>
+                
+                <div class="package-image">
+                    <img src="resources/hero-cards.jpg" alt="Premium Business Cards Package">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included-section">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2>What's Included</h2>
+                <p>Premium features and services designed for your success</p>
+            </div>
+            
+            <div class="included-grid">
+                <div class="included-card animate-on-scroll">
+                    <div class="included-icon">🃏</div>
+                    <h3 class="included-title">1000 Premium Cards</h3>
+                    <p class="included-description">High-quality business cards printed on 500 GSM velvet matte paper for a luxurious feel and professional appearance.</p>
+                </div>
+                
+                <div class="included-card animate-on-scroll">
+                    <div class="included-icon">✨</div>
+                    <h3 class="included-title">Premium Finishes</h3>
+                    <p class="included-description">Choose from gold or silver foil stamping, UV coating, and spot gloss options to make your cards truly stand out.</p>
+                </div>
+                
+                <div class="included-card animate-on-scroll">
+                    <div class="included-icon">📱</div>
+                    <h3 class="included-title">4 FREE NFC Keychains</h3>
+                    <p class="included-description">Modern networking tools that share your contact information instantly with just a tap. Perfect for tech-savvy professionals.</p>
+                </div>
+                
+                <div class="included-card animate-on-scroll">
+                    <div class="included-icon">🎨</div>
+                    <h3 class="included-title">Designer Support</h3>
+                    <p class="included-description">Personal designer assignment with unlimited revisions and direct WhatsApp communication throughout the process.</p>
+                </div>
+                
+                <div class="included-card animate-on-scroll">
+                    <div class="included-icon">🚚</div>
+                    <h3 class="included-title">Free Delivery</h3>
+                    <p class="included-description">Complimentary shipping to your location with tracking information provided. No hidden fees or surprise charges.</p>
+                </div>
+                
+                <div class="included-card animate-on-scroll">
+                    <div class="included-icon">⚡</div>
+                    <h3 class="included-title">Fast Turnaround</h3>
+                    <p class="included-description">Professional 10-12 business day delivery timeline with rush options available for urgent requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2>Why Our Package Stands Out</h2>
+                <p>Compare our premium offering with standard alternatives</p>
+            </div>
+            
+            <div class="comparison-table animate-on-scroll">
+                <div class="table-header">
+                    <div class="table-cell">Features</div>
+                    <div class="table-cell">Standard</div>
+                    <div class="table-cell">MaplePrints</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Premium Paper Quality (500 GSM)</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Foil & UV Coating Options</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Personal Designer Support</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">NFC Keychains Included</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Free Delivery</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">WhatsApp Direct Support</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Satisfaction Guarantee</div>
+                    <div class="table-cell"><span class="cross-icon">✗</span></div>
+                    <div class="table-cell"><span class="check-icon">✓</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-section">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2>Our Simple Process</h2>
+                <p>From design to delivery in just a few easy steps</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">1. Choose Your Path</h3>
+                        <p class="timeline-description">Select "I Have a Design" or "I Need a Design" to begin your journey with us.</p>
+                    </div>
+                    <div class="timeline-number">1</div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2. Connect with Designer</h3>
+                        <p class="timeline-description">Get matched with your personal designer via WhatsApp for direct communication.</p>
+                    </div>
+                    <div class="timeline-number">2</div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">3. Design & Approve</h3>
+                        <p class="timeline-description">Work hand-in-hand with your designer to create and perfect your business cards.</p>
+                    </div>
+                    <div class="timeline-number">3</div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">4. Production</h3>
+                        <p class="timeline-description">Your cards are printed on premium materials with your chosen finishes.</p>
+                    </div>
+                    <div class="timeline-number">4</div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">5. Quality Check</h3>
+                        <p class="timeline-description">Every card is inspected for quality before packaging to ensure perfection.</p>
+                    </div>
+                    <div class="timeline-number">5</div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">6. Fast Delivery</h3>
+                        <p class="timeline-description">Receive your premium business cards at your location within 10-12 business days.</p>
+                    </div>
+                    <div class="timeline-number">6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our premium package</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What file formats do you accept for existing designs?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We accept PDF, JPG, and PNG files. For best results, we recommend PDF files with at least 300 DPI resolution and proper bleed settings.
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>How does the $20 design consultation work?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        The $20 consultation fee is credited toward your final order. You'll work directly with a professional designer via WhatsApp who will create custom designs based on your requirements.
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>Can I request revisions to my design?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! We offer unlimited revisions during the design process. Your satisfaction is our priority, and we'll work with you until the design is perfect.
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What are NFC keychains and how do they work?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        NFC keychains are modern networking tools that share your contact information when tapped against a smartphone. We program them with your business details for instant sharing.
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>Do you offer rush delivery options?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, rush delivery is available for urgent orders. Please contact us via WhatsApp to discuss expedited timeline options and pricing.
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <span>What is your satisfaction guarantee?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We guarantee your satisfaction with free reprints if you're not completely happy with the quality. Your investment is protected with MaplePrints.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Elevate Your Professional Image?</h2>
+            <p>Join thousands of satisfied customers who trust MaplePrints for their business card needs</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-white btn-large" data-whatsapp="existing-design">Order Now - $250</button>
+                <button class="btn btn-secondary btn-large" data-whatsapp="need-design">Get Design Help</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="resources/maple-logo.png" alt="MaplePrints Logo">
+                MaplePrints
+            </div>
+            
+            <div class="footer-tagline">Print Your First Impression</div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MaplePrints. All rights reserved. | Premium Business Cards with Personal Designer Support</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Timeline Animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+    </script>
+</body>
+</html>
