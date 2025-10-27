@@ -81,11 +81,13 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(250, 249, 246, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(217, 166, 69, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
         }
 
         .nav-container {
@@ -130,6 +132,36 @@
 
         .nav-menu a:hover, .nav-menu a.active {
             color: var(--cta-primary);
+        }
+
+        /* Mobile Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         /* Buttons */
@@ -563,8 +595,59 @@
 
         .footer-tagline {
             font-style: italic;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: var(--accent-gold);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--cta-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .social-icon svg {
+            display: block;
+            width: 20px;
+            height: 20px;
         }
 
         .footer-bottom {
@@ -574,14 +657,134 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
+        /* Responsive Design - Mobile First */
         @media (max-width: 768px) {
+            /* Mobile Navigation */
+            .menu-toggle {
+                display: flex !important;
+                position: relative;
+                z-index: 1002;
+                padding: 8px;
+                cursor: pointer;
+                min-width: 40px;
+                min-height: 40px;
+                justify-content: center;
+                align-items: center;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .logo {
+                z-index: 1003;
+            }
+
+            .navbar {
+                padding: 1rem 0;
+            }
+
+            .nav-container {
+                position: relative;
+                padding: 0 15px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 100px;
+                transition: left 0.3s ease;
+                box-shadow: 4px 0 32px rgba(0, 0, 0, 0.12);
+                z-index: 1000;
+                border-right: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+                margin: 0;
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+                display: block;
+                width: 100%;
+            }
+
+            /* Mobile Container */
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Mobile Hero */
             .package-hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2rem;
             }
 
+            .package-hero-text h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .package-hero-text p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .current-price {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+
+            .price-display {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem 0;
+                border-radius: 12px;
+            }
+
+            .savings {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+                margin-top: 1rem;
+            }
+
+            /* Mobile Hero Buttons */
+            .package-hero-text > div[style*="display: flex"] {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .package-hero-text .btn {
+                width: 100% !important;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Mobile Image */
+            .package-image img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Mobile Timeline */
             .timeline::before {
                 left: 20px;
             }
@@ -589,6 +792,7 @@
             .timeline-item {
                 flex-direction: row !important;
                 padding-left: 50px;
+                margin-bottom: 2rem;
             }
 
             .timeline-content {
@@ -596,25 +800,195 @@
                 margin: 0 !important;
             }
 
-            .timeline-number {
-                left: 20px;
-                transform: translateX(-50%);
+            .timeline-title {
+                font-size: 1.1rem;
             }
 
+            .timeline-description {
+                font-size: 0.9rem;
+            }
+
+            .timeline-number {
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            /* Mobile Table */
             .table-header,
             .table-row {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 0;
             }
 
             .table-cell {
                 justify-content: center;
                 text-align: center !important;
+                padding: 1rem 0.5rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
             }
 
             .table-cell:first-child {
                 font-weight: 700;
                 background: rgba(255, 64, 129, 0.1);
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .comparison-table {
+                margin-top: 2rem;
+            }
+
+            /* Mobile Sections */
+            .section {
+                padding: 50px 0;
+            }
+
+            .included-section {
+                padding: 60px 0;
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .included-card {
+                padding: 1.5rem;
+            }
+
+            .included-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .included-title {
+                font-size: 1.1rem;
+            }
+
+            .included-description {
+                font-size: 0.95rem;
+            }
+
+            /* Mobile Typography */
+            h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+                line-height: 1.3;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.5;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            /* Mobile Buttons */
+            .btn {
+                width: 100%;
+                font-size: 0.9rem;
+                padding: 14px 20px;
+            }
+
+            .btn-large {
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+
+            /* Mobile FAQ */
+            .faq-container {
+                margin-top: 2rem;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+                padding: 1.25rem 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 1rem 1.25rem;
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            /* Mobile CTA */
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-section p {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-section > div > div[style*="display: flex"] {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            /* Mobile Footer */
+            .footer-social {
+                gap: 0.75rem;
+            }
+
+            .social-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra Small Mobile */
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .current-price {
+                font-size: 2rem !important;
+            }
+
+            .included-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .btn-large {
+                padding: 12px 24px;
+                font-size: 0.95rem;
             }
         }
 
@@ -630,333 +1004,99 @@
             transform: translateY(0);
         }
 
-        /* Halloween Theme Styles */
-        .halloween-badge {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: linear-gradient(135deg, #FF6B00, #FF8E00, #FF6B00);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            z-index: 999;
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.6), 0 0 20px rgba(255, 107, 0, 0.3);
-            animation: pulse-orange 2s infinite;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes pulse-orange {
-            0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(255, 107, 0, 0.6), 0 0 20px rgba(255, 107, 0, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(255, 107, 0, 0.8), 0 0 30px rgba(255, 107, 0, 0.5); }
-        }
-
-        /* Floating Bats Animation */
-        .bat {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            z-index: 998;
-            pointer-events: none;
-            opacity: 0.8;
-            filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.5)) drop-shadow(0 0 20px rgba(255, 107, 0, 0.3));
-        }
-
-        .bat::before {
-            content: '🦇';
-            font-size: 30px;
-            display: block;
-            animation: fly 15s infinite linear;
-        }
-
-        @keyframes fly {
-            0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateX(100vw) translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* Ghost Animations */
-        .ghost {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            z-index: 998;
-            pointer-events: none;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
-        }
-
-        .ghost::before {
-            content: '👻';
-            font-size: 40px;
-            display: block;
-            animation: float-ghost 12s infinite ease-in-out;
-        }
-
-        @keyframes float-ghost {
-            0% { transform: translateY(0) translateX(0); opacity: 0; }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.7; }
-            100% { transform: translateY(-100vh) translateX(50vw); opacity: 0; }
-        }
-
-        /* Pumpkin Decorations */
-        .pumpkin {
-            position: fixed;
-            width: 50px;
-            height: 50px;
-            z-index: 998;
-            pointer-events: none;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.7)) drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
-        }
-
-        .pumpkin::before {
-            content: '🎃';
-            font-size: 50px;
-            display: block;
-            animation: bounce-pumpkin 8s infinite ease-in-out;
-        }
-
-        @keyframes bounce-pumpkin {
-            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-80vh) rotate(180deg); opacity: 0.7; }
-        }
-
-        /* Halloween Stars */
-        .sparkle {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            z-index: 998;
-            pointer-events: none;
-            opacity: 0;
-            animation: sparkle-effect 4s infinite;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
-        }
-
-        .sparkle::before {
-            content: '✨';
-            font-size: 20px;
-            display: block;
-        }
-
-        @keyframes sparkle-effect {
-            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-        }
-
-        /* Halloween Background Glow */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.1), transparent 50%),
-                        radial-gradient(circle at 80% 50%, rgba(128, 0, 128, 0.1), transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-            animation: glow-shift 10s infinite alternate;
-        }
-
-        @keyframes glow-shift {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.6; }
-        }
-
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            body::before {
-                background: radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.2), transparent 50%),
-                            radial-gradient(circle at 80% 50%, rgba(128, 0, 128, 0.2), transparent 50%);
-                opacity: 0.8;
-            }
-
-            .halloween-badge {
-                box-shadow: 0 8px 25px rgba(255, 107, 0, 0.8), 0 0 40px rgba(255, 107, 0, 0.5), 
-                           0 0 60px rgba(255, 107, 0, 0.3);
-                border-color: rgba(255, 255, 255, 0.5);
-            }
-
-            @keyframes pulse-orange {
-                0%, 100% { 
-                    transform: scale(1); 
-                    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.8), 
-                                0 0 40px rgba(255, 107, 0, 0.5), 
-                                0 0 60px rgba(255, 107, 0, 0.3);
-                }
-                50% { 
-                    transform: scale(1.05); 
-                    box-shadow: 0 12px 40px rgba(255, 107, 0, 1), 
-                                0 0 60px rgba(255, 107, 0, 0.7), 
-                                0 0 80px rgba(255, 107, 0, 0.5);
-                }
-            }
-
-            .bat {
-                filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.8)) 
-                        drop-shadow(0 0 30px rgba(255, 107, 0, 0.5))
-                        drop-shadow(0 0 45px rgba(255, 107, 0, 0.3));
-            }
-
-            .ghost {
-                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)) 
-                        drop-shadow(0 0 40px rgba(255, 255, 255, 0.7))
-                        drop-shadow(0 0 60px rgba(255, 255, 255, 0.5));
-            }
-
-            .pumpkin {
-                filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.9)) 
-                        drop-shadow(0 0 40px rgba(255, 107, 0, 0.6))
-                        drop-shadow(0 0 60px rgba(255, 107, 0, 0.4));
-            }
-
-            .sparkle {
-                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 1)) 
-                        drop-shadow(0 0 30px rgba(255, 215, 0, 0.8))
-                        drop-shadow(0 0 45px rgba(255, 215, 0, 0.6));
-            }
-        }
-
-        /* Halloween Price Display Enhancement */
+        /* Modern Halloween Price Display */
         .price-display {
-            background: linear-gradient(135deg, #FF6B00, #FF8E00, #D84315);
+            background: linear-gradient(135deg, #FF6B00, #FF8E00);
             position: relative;
             overflow: hidden;
         }
 
-        .price-display::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 20px,
-                rgba(255, 255, 255, 0.05) 20px,
-                rgba(255, 255, 255, 0.05) 40px
-            );
-            animation: shine 3s infinite;
+        .price-display .current-price::before {
+            content: '🎃';
+            margin-right: 8px;
         }
 
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        /* Halloween Button Effects */
-        .btn-primary {
+        .price-display .savings {
             position: relative;
-            overflow: hidden;
         }
 
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+        .price-display .savings::before {
+            content: '👻';
+            margin-right: 8px;
         }
 
-        .btn-primary:hover::after {
-            width: 300px;
-            height: 300px;
+        /* Modern Halloween Buttons */
+        body .btn-primary {
+            background: linear-gradient(135deg, #FF6B00, #E65100) !important;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3) !important;
+        }
+
+        body .btn-primary::before {
+            content: '🎃 ';
+            margin-right: 0;
+        }
+
+        body .btn-primary:hover {
+            background: linear-gradient(135deg, #E65100, #FF6B00) !important;
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4) !important;
+        }
+
+        body .btn-secondary {
+            border-color: #FF6B00 !important;
+            color: #FF6B00 !important;
+        }
+
+        body .btn-secondary::before {
+            content: '👻 ';
+            margin-right: 0;
+        }
+
+        body .btn-secondary:hover {
+            background: #FF6B00 !important;
+            color: white !important;
+        }
+
+        /* Halloween-themed Card Icons */
+        .included-card:nth-child(1) .included-icon::after {
+            content: ' 🎃';
+        }
+
+        .included-card:nth-child(3) .included-icon::after {
+            content: ' 👻';
         }
 
         /* Halloween CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #FF6B00, #D84315, #8E24AA);
+            background: linear-gradient(135deg, #FF6B00, #8E24AA);
+        }
+
+        .cta-section h2::before {
+            content: '🎃 ';
+        }
+
+        .btn-white.btn-large[data-whatsapp="existing-design"]::before {
+            content: '🦇 ';
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--cta-primary);
+            font-weight: 700;
+        }
+
+        .btn-white:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modern Halloween Price Badge */
+        .original-price {
             position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.03) 0px,
-                rgba(255, 255, 255, 0.03) 1px,
-                transparent 1px,
-                transparent 40px
-            );
-            animation: lines-move 20s infinite linear;
-        }
-
-        @keyframes lines-move {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-40px); }
-        }
-
-        /* Spooky Card Hover Effect */
-        .included-card:hover {
-            animation: spooky-hover 0.5s ease-in-out;
-        }
-
-        @keyframes spooky-hover {
-            0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-5px) rotate(1deg); }
-            75% { transform: translateY(-5px) rotate(-1deg); }
-        }
-
-        /* Responsive Halloween Elements */
-        @media (max-width: 768px) {
-            .halloween-badge {
-                top: 70px;
-                right: 10px;
-                padding: 8px 16px;
-                font-size: 0.75rem;
-            }
-
-            .bat, .ghost, .pumpkin {
-                display: none;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Halloween Badge -->
-    <div class="halloween-badge">🎃 Spooky Sale! 🎃</div>
-
-    <!-- Halloween Decorations -->
-    <div class="bat" style="top: 100px; left: -50px; animation-delay: 0s;"></div>
-    <div class="bat" style="top: 300px; left: -50px; animation-delay: 3s;"></div>
-    <div class="bat" style="top: 500px; left: -50px; animation-delay: 6s;"></div>
-    <div class="bat" style="top: 700px; left: -50px; animation-delay: 9s;"></div>
-    <div class="bat" style="top: 900px; left: -50px; animation-delay: 12s;"></div>
-
-    <div class="ghost" style="top: 200px; left: 10%; animation-delay: 0s;"></div>
-    <div class="ghost" style="top: 600px; left: 80%; animation-delay: 4s;"></div>
-    <div class="ghost" style="top: 1000px; left: 50%; animation-delay: 8s;"></div>
-
-    <div class="pumpkin" style="top: 400px; left: 20%; animation-delay: 0s;"></div>
-    <div class="pumpkin" style="top: 800px; left: 70%; animation-delay: 4s;"></div>
-    <div class="pumpkin" style="top: 1200px; left: 40%; animation-delay: 8s;"></div>
-
-    <div class="sparkle" style="top: 150px; left: 50%; animation-delay: 0s;"></div>
-    <div class="sparkle" style="top: 350px; left: 30%; animation-delay: 1s;"></div>
-    <div class="sparkle" style="top: 550px; left: 70%; animation-delay: 2s;"></div>
-    <div class="sparkle" style="top: 750px; left: 20%; animation-delay: 0.5s;"></div>
-    <div class="sparkle" style="top: 950px; left: 80%; animation-delay: 1.5s;"></div>
-    <div class="sparkle" style="top: 1150px; left: 60%; animation-delay: 2.5s;"></div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -964,6 +1104,12 @@
                 <img src="resources/maple-logo.png" alt="MaplePrints Logo">
                 MaplePrints
             </a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -978,10 +1124,10 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header" style="position: relative; overflow: hidden;">
-        <div class="container" style="position: relative; z-index: 1;">
-            <h1 class="page-title" style="background: linear-gradient(135deg, #FF6B00, #D84315, #8E24AA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">🎃 Premium Business Card Package 🎃</h1>
-            <p class="page-subtitle" style="font-size: 1.25rem; color: #333;">Everything you need for professional networking success, with hand-in-hand designer support</p>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Premium Business Card Package</h1>
+            <p class="page-subtitle">Everything you need for professional networking success, with hand-in-hand designer support</p>
         </div>
     </section>
 
@@ -994,12 +1140,12 @@
                     <p>Our most popular business card package includes everything you need to make a lasting impression. From premium materials to expert design support, we've thought of every detail.</p>
                     
                     <div class="price-display">
-                        <div class="current-price">🎃 $250 🎃</div>
+                        <div class="current-price">$250</div>
                         <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">
                             <span class="original-price">$300</span>
-                            <span style="font-size: 1rem; color: #FFD700;">👻 Spooky Sale! 👻</span>
+                            <span style="font-size: 1rem;">Spooky Sale Special</span>
                         </div>
-                        <div class="savings">💀 Save $50 This Halloween! 💀</div>
+                        <div class="savings">You Save $50!</div>
                     </div>
                     
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -1258,11 +1404,11 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">🎃 Don't Miss This Spooky Deal! 🎃</h2>
-            <p style="font-size: 1.25rem; opacity: 0.95;">Join thousands of satisfied customers who trust MaplePrints for their business card needs</p>
+            <h2>Don't Miss This Spooky Sale!</h2>
+            <p>Join thousands of satisfied customers who trust MaplePrints for their business card needs</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-white btn-large" data-whatsapp="existing-design">👻 Order Now - $250 👻</button>
-                <button class="btn btn-white btn-large" data-whatsapp="need-design">💀 Get Design Help 💀</button>
+                <button class="btn btn-white btn-large" data-whatsapp="existing-design">Order Now - $250</button>
+                <button class="btn btn-white btn-large" data-whatsapp="need-design">Get Design Help</button>
             </div>
         </div>
     </section>
@@ -1277,6 +1423,23 @@
             
             <div class="footer-tagline">Print Your First Impression</div>
             
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="package.html">Package</a>
+                <a href="design.html">Design Options</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-icon" data-whatsapp="general-inquiry" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+                <a href="https://www.instagram.com/mapleprints.ca/" target="_blank" class="social-icon" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://www.facebook.com/profile.php?id=61578612213043" target="_blank" class="social-icon" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="mailto:MaplePrintscanada@gmail.com" class="social-icon" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                <a href="tel:+14378186152" class="social-icon" title="Call"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 MaplePrints. All rights reserved. | Premium Business Cards with Personal Designer Support</p>
             </div>
@@ -1286,100 +1449,81 @@
     <!-- JavaScript -->
     <script src="main.js"></script>
     <script>
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded');
+            
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            console.log('Menu toggle element:', menuToggle);
+            console.log('Nav menu element:', navMenu);
+
+            if (menuToggle && navMenu) {
+                console.log('Mobile menu initialized successfully');
                 
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Menu toggle clicked');
+                    navMenu.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
                 });
                 
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        // Timeline Animation
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        timelineItems.forEach(item => {
-            timelineObserver.observe(item);
-        });
-
-        // Halloween Dynamic Effects
-        (function() {
-            // Check for dark mode
-            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            // Create random sparkles on page
-            setInterval(() => {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.top = Math.random() * window.innerHeight + 'px';
-                sparkle.style.left = Math.random() * window.innerWidth + 'px';
-                sparkle.style.animationDelay = Math.random() * 2 + 's';
-                if (isDarkMode) {
-                    sparkle.style.filter = 'drop-shadow(0 0 15px rgba(255, 215, 0, 1)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 45px rgba(255, 215, 0, 0.6))';
-                }
-                document.body.appendChild(sparkle);
-
-                setTimeout(() => sparkle.remove(), 4000);
-            }, 2000);
-
-            // Add spooky mouse effect
-            let lastMouseX = 0, lastMouseY = 0;
-            document.addEventListener('mousemove', (e) => {
-                if (Math.random() > 0.95) {
-                    const sparkle = document.createElement('div');
-                    sparkle.className = 'sparkle';
-                    sparkle.style.position = 'fixed';
-                    sparkle.style.top = e.clientY + 'px';
-                    sparkle.style.left = e.clientX + 'px';
-                    sparkle.style.fontSize = '15px';
-                    if (isDarkMode) {
-                        sparkle.style.filter = 'drop-shadow(0 0 15px rgba(255, 215, 0, 1)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 45px rgba(255, 215, 0, 0.6))';
-                    }
-                    document.body.appendChild(sparkle);
-                    setTimeout(() => sparkle.remove(), 1000);
-                }
-            });
-
-            // Animate Halloween badge
-            const badge = document.querySelector('.halloween-badge');
-            if (badge) {
-                setInterval(() => {
-                    badge.style.transform = 'rotate(-5deg)';
-                    setTimeout(() => {
-                        badge.style.transform = 'rotate(5deg)';
-                        setTimeout(() => {
-                            badge.style.transform = 'rotate(0deg)';
-                        }, 100);
-                    }, 100);
-                }, 3000);
+                // Add touch event for mobile
+                menuToggle.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    console.log('Menu toggle touched');
+                    navMenu.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            } else {
+                console.log('ERROR: Menu elements not found', {menuToggle: !!menuToggle, navMenu: !!navMenu});
             }
+        });
 
-            // Make included cards wobble randomly
-            const cards = document.querySelectorAll('.included-card');
-            setInterval(() => {
-                const randomCard = cards[Math.floor(Math.random() * cards.length)];
-                randomCard.style.animation = 'spooky-hover 0.5s ease-in-out';
-                setTimeout(() => {
-                    randomCard.style.animation = '';
-                }, 500);
-            }, 5000);
-        })();
+        // FAQ and Timeline - Run after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle Functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+
+            // Timeline Animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+        });
     </script>
 </body>
 </html>
