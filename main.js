@@ -261,7 +261,9 @@ class MaplePrints {
       const existingVideos = results.filter(result => result.exists);
       
       if (existingVideos.length === 0) {
-        console.warn("No videos found in resources/carousel-videos/ folder");
+        if (window.location.hostname !== 'localhost') {
+          console.warn("No videos found in resources/carousel-videos/ folder");
+        }
         return;
       }
       
@@ -309,7 +311,7 @@ class MaplePrints {
             if (video) {
               video.currentTime = 0;
               video.play().catch((err) => {
-                console.log("Video play error:", err);
+                // Video play error handled silently for better UX
               });
             }
           } else if (index === (currentIndex - 1 + carouselItems.length) % carouselItems.length) {
@@ -404,7 +406,7 @@ class MaplePrints {
           const activeVideo = getVideo(carouselItems[currentIndex]);
           if (activeVideo) {
             activeVideo.play().catch((err) => {
-              console.log("Video play error:", err);
+              // Video play error handled silently for better UX
             });
           }
           setupAutoAdvance();
@@ -461,7 +463,7 @@ class MaplePrints {
           video.addEventListener("loadedmetadata", () => {
             if (item.classList.contains("active")) {
               video.play().catch((err) => {
-                console.log("Video play error:", err);
+                // Video play error handled silently for better UX
               });
             }
           });
@@ -517,7 +519,9 @@ class MaplePrints {
       const existingVideos = results.filter(result => result.exists);
       
       if (existingVideos.length === 0) {
-        console.warn("No videos found in resources/recent-orders/ folder");
+        if (window.location.hostname !== 'localhost') {
+          console.warn("No videos found in resources/recent-orders/ folder");
+        }
         return;
       }
       
@@ -543,7 +547,9 @@ class MaplePrints {
         
         // Play video on hover
         galleryItem.addEventListener("mouseenter", () => {
-          video.play().catch(err => console.log("Video play error:", err));
+          video.play().catch(() => {
+            // Video play error handled silently for better UX
+          });
         });
         
         galleryItem.addEventListener("mouseleave", () => {
@@ -934,7 +940,7 @@ Please let me know about rush order options.`,
       });
     }
 
-    console.log(`Conversion tracked: ${event}`);
+    // Conversion tracking - analytics handled by gtag
   }
 
   // Utility functions
@@ -990,7 +996,7 @@ window.MaplePrintsUtils = {
       await navigator.clipboard.writeText(text);
       return true;
     } catch (err) {
-      console.error("Failed to copy text: ", err);
+      // Clipboard error handled gracefully
       return false;
     }
   },

@@ -63,34 +63,51 @@
     <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png">
     
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data - Enhanced for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://mapleprints.ca/#organization",
       "name": "MaplePrints",
-      "description": "Premium business card printing service in Canada with custom design support",
+      "alternateName": "MaplePrints Canada",
+      "description": "Premium business card printing service in Canada with personal designer support. Get 1000 premium business cards for $250 with velvet matte paper, foil/UV coating, and 1 FREE NFC keychain. Fast delivery across Canada.",
       "url": "https://mapleprints.ca",
-      "logo": "https://mapleprints.ca/resources/maple-logo.png",
-      "image": "https://mapleprints.ca/resources/og-image.jpg",
-      "telephone": "+1-XXX-XXX-XXXX",
-      "email": "hello@mapleprints.ca",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mapleprints.ca/resources/maple-logo.png",
+        "width": 200,
+        "height": 200
+      },
+      "image": [
+        "https://mapleprints.ca/resources/og-image.jpg",
+        "https://mapleprints.ca/resources/hero-cards.jpg"
+      ],
+      "telephone": "+14378186152",
+      "email": "MaplePrintscanada@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "CA",
-        "addressRegion": "Canada"
+        "addressRegion": "Canada",
+        "addressLocality": "Canada"
       },
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "56.130366",
         "longitude": "-106.346771"
       },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
       "sameAs": [
-        "https://facebook.com/mapleprints",
-        "https://instagram.com/mapleprints",
-        "https://linkedin.com/company/mapleprints"
+        "https://www.instagram.com/mapleprints.ca/",
+        "https://www.facebook.com/profile.php?id=61578612213043"
       ],
-      "priceRange": "$$$",
+      "priceRange": "$$",
+      "paymentAccepted": "Credit Card, Debit Card, E-Transfer",
+      "currenciesAccepted": "CAD",
+      "openingHours": "Mo-Su 09:00-18:00",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Business Card Services",
@@ -99,17 +116,144 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Product",
-              "name": "Premium Business Cards",
-              "description": "1000 premium business cards with velvet matte paper, foil/UV coating options, and 1 FREE NFC keychain",
+              "name": "Premium Business Cards - 1000 Cards",
+              "description": "1000 premium business cards with velvet matte paper, foil/UV coating options, and 1 FREE NFC keychain. Thick as a credit card quality with professional design support.",
               "category": "Business Cards",
-              "brand": "MaplePrints"
+              "brand": {
+                "@type": "Brand",
+                "name": "MaplePrints"
+              },
+              "image": "https://mapleprints.ca/resources/hero-cards.jpg"
             },
             "price": "250",
             "priceCurrency": "CAD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://mapleprints.ca/package.html",
+            "seller": {
+              "@type": "Organization",
+              "name": "MaplePrints"
+            }
           }
         ]
-      }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Johnson"
+          },
+          "datePublished": "2025-01-15",
+          "reviewBody": "The quality exceeded my expectations! The velvet matte finish feels incredible, and the gold foil details are perfect. My designer was so helpful throughout the process.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Chen"
+          },
+          "datePublished": "2025-01-10",
+          "reviewBody": "Outstanding service from start to finish. The hand-in-hand design approach made all the difference. My business cards are now conversation starters at every meeting.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "David Rodriguez"
+          },
+          "datePublished": "2025-01-05",
+          "reviewBody": "Professional, fast, and flawless. The NFC keychains were a bonus that really impressed my clients. Will definitely order again!",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mapleprints.ca/"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much do premium business cards cost in Canada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our premium business card package costs $250 CAD for 1000 cards, regularly priced at $300. This includes velvet matte paper, foil/UV coating options, 1 FREE NFC keychain, and free delivery across Canada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide design services for business cards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We offer personal designer support for $20 (credited toward your final order). You'll work hand-in-hand with a professional designer who will create your custom design, provide 3 revisions, and ensure your business cards perfectly represent your brand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the premium business card package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The premium package includes 1000 business cards on thick credit card quality paper, velvet matte finish, gold/silver foil options, UV coating available, 1 FREE NFC keychain, free professional design support, free delivery, and 10-12 business days delivery time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to receive business cards in Canada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard delivery is 10-12 business days with free shipping. Rush options are available for urgent needs. All orders include free delivery across Canada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes MaplePrints business cards premium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our business cards feature thick credit card quality paper, luxurious velvet matte finish, premium foil and UV coating options, and professional design support. We also include 1 FREE NFC keychain with every order, making your cards interactive and modern."
+          }
+        }
+      ]
     }
     </script>
     
@@ -730,6 +874,53 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
+            }
+        }
+
+        /* FAQ Section Styles */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--cta-primary);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-item {
+                padding: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
             }
         }
 
@@ -1413,11 +1604,14 @@
             </button>
             
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="package.html">Package</a></li>
-                <li><a href="index.html#blog">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="#" class="btn btn-primary" data-whatsapp="general-inquiry">Start Your Design</a></li>
+                <li><a href="/" class="active" aria-label="Home">Home</a></li>
+                <li><a href="package.html" aria-label="Business Card Packages">Packages</a></li>
+                <li><a href="design.html" aria-label="Design Services">Design</a></li>
+                <li><a href="testimonials.html" aria-label="Testimonials">Testimonials</a></li>
+                <li><a href="#faq" aria-label="FAQ">FAQ</a></li>
+                <li><a href="#blog" aria-label="Blog">Blog</a></li>
+                <li><a href="#contact" aria-label="Contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary" data-whatsapp="general-inquiry" aria-label="Start Your Design">Start Your Design</a></li>
             </ul>
         </div>
     </nav>
@@ -1654,6 +1848,53 @@
         </div>
     </section>
 
+    <!-- FAQ Section - SEO Optimized -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our premium business card services in Canada</p>
+            </div>
+            
+            <div class="faq-container" style="max-width: 800px; margin: 3rem auto 0;">
+                <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">How much do premium business cards cost in Canada?</h3>
+                    <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                        <p itemprop="text">Our premium business card package costs <strong>$250 CAD for 1000 cards</strong>, regularly priced at $300. This includes velvet matte paper, foil/UV coating options, 1 FREE NFC keychain, and free delivery across Canada. We also offer a design service add-on for $20 (credited toward your final order).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">Do you provide design services for business cards?</h3>
+                    <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                        <p itemprop="text">Yes! We offer <strong>personal designer support for $20</strong> (credited toward your final order). You'll work hand-in-hand with a professional designer who will create your custom design, provide 3 revisions, and ensure your business cards perfectly represent your brand. Direct WhatsApp communication ensures quick responses within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">What is included in the premium business card package?</h3>
+                    <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                        <p itemprop="text">The premium package includes <strong>1000 business cards</strong> on thick credit card quality paper, luxurious velvet matte finish, gold/silver foil options, UV coating available, <strong>1 FREE NFC keychain</strong>, free professional design support, free delivery across Canada, and 10-12 business days delivery time.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">How long does it take to receive business cards in Canada?</h3>
+                    <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                        <p itemprop="text">Standard delivery is <strong>10-12 business days</strong> with free shipping to anywhere in Canada. Rush options are available for urgent needs. All orders include complimentary delivery with no hidden fees.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
+                    <h3 class="faq-question" itemprop="name">What makes MaplePrints business cards premium?</h3>
+                    <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                        <p itemprop="text">Our business cards feature <strong>thick credit card quality paper</strong>, luxurious velvet matte finish, premium foil and UV coating options, and professional design support. We also include <strong>1 FREE NFC keychain</strong> with every order, making your cards interactive and modern. Every card is designed hand-in-hand with expert designers to ensure perfection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section section-alt">
         <div class="container">
@@ -1689,10 +1930,13 @@
             <div class="footer-tagline">Print Your First Impression</div>
             
             <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="package.html">Package</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
+                <a href="/" aria-label="Home">Home</a>
+                <a href="package.html" aria-label="Business Card Packages">Packages</a>
+                <a href="design.html" aria-label="Design Services">Design Services</a>
+                <a href="testimonials.html" aria-label="Customer Testimonials">Testimonials</a>
+                <a href="#faq" aria-label="Frequently Asked Questions">FAQ</a>
+                <a href="#blog" aria-label="Design Tips & Blog">Blog</a>
+                <a href="#contact" aria-label="Contact Us">Contact</a>
             </div>
             
             <div class="footer-social">
