@@ -11,6 +11,8 @@ class MaplePrints {
     this.initAnimations();
     this.setupFormHandlers();
     this.initCarousels();
+    this.initImageCarousel();
+    this.initCircularGallery();
     this.setupScrollAnimations();
     this.initWhatsAppIntegration();
   }
@@ -199,6 +201,359 @@ class MaplePrints {
         }).mount();
       }
     }
+  }
+
+  initImageCarousel() {
+    const carouselWrapper = document.querySelector(".carousel-images-wrapper");
+    if (!carouselWrapper) return;
+
+    const prevBtn = document.querySelector(".carousel-btn-prev");
+    const nextBtn = document.querySelector(".carousel-btn-next");
+    
+    let currentIndex = 0;
+    let autoplayTimeout = null;
+    const autoplayDelay = 8000; // 8 seconds default, will use video duration if available
+    let carouselItems = [];
+    const videoBasePath = "resources/carousel-videos/";
+    const maxVideos = 20; // Maximum number of videos to check
+
+    // Get video element from carousel item
+    const getVideo = (item) => {
+      return item.querySelector("video");
+    };
+
+    // Dynamically detect and load videos (1.mp4, 2.mp4, 3.mp4, etc.)
+    const loadVideosDynamically = async () => {
+      const videoPromises = [];
+      
+      // Try to load videos sequentially from 1.mp4 onwards
+      for (let i = 1; i <= maxVideos; i++) {
+        const videoPath = `${videoBasePath}${i}.mp4`;
+        const promise = new Promise((resolve) => {
+          const video = document.createElement("video");
+          video.src = videoPath;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.preload = "metadata";
+          
+          video.addEventListener("loadedmetadata", () => {
+            // Video exists and loaded successfully
+            resolve({ index: i, video: video, exists: true });
+          });
+          
+          video.addEventListener("error", () => {
+            // Video doesn't exist
+            resolve({ index: i, video: null, exists: false });
+          });
+          
+          // Try to load
+          video.load();
+        });
+        
+        videoPromises.push(promise);
+      }
+      
+      // Wait for all video checks
+      const results = await Promise.all(videoPromises);
+      
+      // Filter out non-existent videos and create carousel items
+      const existingVideos = results.filter(result => result.exists);
+      
+      if (existingVideos.length === 0) {
+        console.warn("No videos found in resources/carousel-videos/ folder");
+        return;
+      }
+      
+      // Create carousel items for each video
+      existingVideos.forEach((result, idx) => {
+        const carouselItem = document.createElement("div");
+        carouselItem.className = "carousel-image";
+        carouselItem.setAttribute("data-index", idx);
+        if (idx === 0) {
+          carouselItem.classList.add("active");
+        }
+        
+        // Create video element
+        const video = document.createElement("video");
+        video.src = `${videoBasePath}${result.index}.mp4`;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "auto";
+        
+        carouselItem.appendChild(video);
+        carouselWrapper.appendChild(carouselItem);
+      });
+      
+      // Get all carousel items after creation
+      carouselItems = carouselWrapper.querySelectorAll(".carousel-image");
+      
+      // Initialize carousel after videos are loaded
+      initializeCarousel();
+    };
+
+    // Initialize carousel functionality
+    const initializeCarousel = () => {
+      if (carouselItems.length === 0) return;
+
+      // Initialize carousel
+      const updateCarousel = () => {
+        carouselItems.forEach((item, index) => {
+          item.classList.remove("active", "prev", "next");
+          
+          if (index === currentIndex) {
+            item.classList.add("active");
+            // Play the active video
+            const video = getVideo(item);
+            if (video) {
+              video.currentTime = 0;
+              video.play().catch((err) => {
+                console.log("Video play error:", err);
+              });
+            }
+          } else if (index === (currentIndex - 1 + carouselItems.length) % carouselItems.length) {
+            item.classList.add("prev");
+            const video = getVideo(item);
+            if (video) {
+              video.pause();
+              video.currentTime = 0;
+            }
+          } else if (index === (currentIndex + 1) % carouselItems.length) {
+            item.classList.add("next");
+            const video = getVideo(item);
+            if (video) {
+              video.pause();
+              video.currentTime = 0;
+            }
+          } else {
+            const video = getVideo(item);
+            if (video) {
+              video.pause();
+              video.currentTime = 0;
+            }
+          }
+        });
+
+        // Set up auto-advance based on video duration
+        setupAutoAdvance();
+      };
+
+      // Setup auto-advance based on video duration
+      const setupAutoAdvance = () => {
+        clearTimeout(autoplayTimeout);
+        
+        const activeItem = carouselItems[currentIndex];
+        const activeVideo = getVideo(activeItem);
+        
+        if (activeVideo) {
+          // Use video duration if available, otherwise use default delay
+          const duration = activeVideo.duration;
+          const delay = duration && duration > 0 ? (duration * 1000) + 500 : autoplayDelay;
+          
+          autoplayTimeout = setTimeout(() => {
+            nextItem();
+          }, delay);
+        } else {
+          // Fallback for images or if video not loaded
+          autoplayTimeout = setTimeout(() => {
+            nextItem();
+          }, autoplayDelay);
+        }
+      };
+
+      // Next item
+      const nextItem = () => {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        updateCarousel();
+      };
+
+      // Previous item
+      const prevItem = () => {
+        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        updateCarousel();
+      };
+
+      // Event listeners
+      if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          nextItem();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          prevItem();
+        });
+      }
+
+      // Pause autoplay on hover
+      const carouselContainer = document.querySelector(".image-carousel-container");
+      if (carouselContainer) {
+        carouselContainer.addEventListener("mouseenter", () => {
+          clearTimeout(autoplayTimeout);
+          const activeVideo = getVideo(carouselItems[currentIndex]);
+          if (activeVideo) {
+            activeVideo.pause();
+          }
+        });
+
+        carouselContainer.addEventListener("mouseleave", () => {
+          const activeVideo = getVideo(carouselItems[currentIndex]);
+          if (activeVideo) {
+            activeVideo.play().catch((err) => {
+              console.log("Video play error:", err);
+            });
+          }
+          setupAutoAdvance();
+        });
+      }
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (carouselContainer && carouselContainer.offsetParent !== null) {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            prevItem();
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            nextItem();
+          }
+        }
+      });
+
+      // Touch/swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      if (carouselContainer) {
+        carouselContainer.addEventListener("touchstart", (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselContainer.addEventListener("touchend", (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        });
+      }
+
+      const handleSwipe = () => {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            nextItem();
+          } else {
+            prevItem();
+          }
+        }
+      };
+
+      // Preload videos
+      carouselItems.forEach((item) => {
+        const video = getVideo(item);
+        if (video) {
+          video.load();
+          // Wait for video to be ready
+          video.addEventListener("loadedmetadata", () => {
+            if (item.classList.contains("active")) {
+              video.play().catch((err) => {
+                console.log("Video play error:", err);
+              });
+            }
+          });
+        }
+      });
+
+      // Initialize
+      updateCarousel();
+    };
+
+    // Start loading videos dynamically
+    loadVideosDynamically();
+  }
+
+  initCircularGallery() {
+    const galleryContainer = document.getElementById("circularGallery");
+    if (!galleryContainer) {
+      return;
+    }
+
+    const videoBasePath = "resources/recent-orders/";
+    const maxVideos = 20;
+
+    // Load videos dynamically
+    const loadVideosDynamically = async () => {
+      const videoPromises = [];
+      
+      for (let i = 1; i <= maxVideos; i++) {
+        const videoPath = `${videoBasePath}${i}.mp4`;
+        const promise = new Promise((resolve) => {
+          const video = document.createElement("video");
+          video.src = videoPath;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.preload = "metadata";
+          
+          video.addEventListener("loadedmetadata", () => {
+            resolve({ index: i, video: video, exists: true });
+          });
+          
+          video.addEventListener("error", () => {
+            resolve({ index: i, video: null, exists: false });
+          });
+          
+          video.load();
+        });
+        
+        videoPromises.push(promise);
+      }
+      
+      const results = await Promise.all(videoPromises);
+      const existingVideos = results.filter(result => result.exists);
+      
+      if (existingVideos.length === 0) {
+        console.warn("No videos found in resources/recent-orders/ folder");
+        return;
+      }
+      
+      // Create gallery items
+      existingVideos.forEach((result) => {
+        const galleryItem = document.createElement("div");
+        galleryItem.className = "gallery-item";
+        
+        const video = document.createElement("video");
+        video.src = `${videoBasePath}${result.index}.mp4`;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "auto";
+        
+        const label = document.createElement("div");
+        label.className = "gallery-item-label";
+        label.textContent = `Order #${result.index}`;
+        
+        galleryItem.appendChild(video);
+        galleryItem.appendChild(label);
+        galleryContainer.appendChild(galleryItem);
+        
+        // Play video on hover
+        galleryItem.addEventListener("mouseenter", () => {
+          video.play().catch(err => console.log("Video play error:", err));
+        });
+        
+        galleryItem.addEventListener("mouseleave", () => {
+          video.pause();
+        });
+      });
+    };
+
+    // Start loading videos
+    loadVideosDynamically();
   }
 
   setupFormHandlers() {

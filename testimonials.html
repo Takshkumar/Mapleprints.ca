@@ -544,9 +544,9 @@
             gap: 2rem;
         }
 
-        /* CTA Section */
+        /* CTA Section - New Year Theme */
         .cta-section {
-            background: linear-gradient(135deg, var(--cta-primary), #FF6B9D);
+            background: linear-gradient(135deg, #003366, #0066CC);
             color: var(--white);
             padding: 80px 0;
             text-align: center;
@@ -555,6 +555,10 @@
         .cta-section h2 {
             color: var(--white);
             margin-bottom: 1rem;
+        }
+
+        .cta-section h2::before {
+            content: '⭐ ';
         }
 
         .cta-section p {
@@ -569,10 +573,45 @@
             font-weight: 700;
         }
 
+        .btn-white.btn-large[data-whatsapp="existing-design"]::before {
+            content: '🎆 ';
+        }
+
         .btn-white:hover {
             background: rgba(255, 255, 255, 0.9);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* New Year Buttons */
+        body .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
+        }
+
+        body .btn-primary::before {
+            content: '🎉 ';
+            margin-right: 0;
+        }
+
+        body .btn-primary:hover {
+            background: linear-gradient(135deg, #FFA500, #FFD700) !important;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5) !important;
+        }
+
+        body .btn-secondary {
+            border-color: #FFD700 !important;
+            color: #FFD700 !important;
+        }
+
+        body .btn-secondary::before {
+            content: '✨ ';
+            margin-right: 0;
+        }
+
+        body .btn-secondary:hover {
+            background: #FFD700 !important;
+            color: #003366 !important;
         }
 
         /* Footer */
