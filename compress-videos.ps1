@@ -61,20 +61,10 @@ foreach ($dir in $directories) {
         Copy-Item $video.FullName $backupPath -Force
         
         # Compress video (target: <2MB, quality: good balance)
-        $tempFile = $video.FullName + ".tmp"
+        $tempFile = $video.DirectoryName + "\" + $video.BaseName + "_compressed.mp4"
         
         # FFmpeg command: H.264 codec, CRF 28 (good quality, smaller size), preset fast
-        $ffmpegArgs = @(
-            "-i", "`"$($video.FullName)`"",
-            "-c:v", "libx264",
-            "-crf", "28",
-            "-preset", "fast",
-            "-c:a", "aac",
-            "-b:a", "128k",
-            "-movflags", "+faststart",
-            "-y",
-            "`"$tempFile`""
-        )
+        $ffmpegArgs = "-i `"$($video.FullName)`" -c:v libx264 -crf 28 -preset fast -c:a aac -b:a 128k -movflags +faststart -f mp4 -y `"$tempFile`""
         
         $process = Start-Process -FilePath "ffmpeg" -ArgumentList $ffmpegArgs -Wait -NoNewWindow -PassThru
         
@@ -82,12 +72,12 @@ foreach ($dir in $directories) {
             $newSize = [math]::Round((Get-Item $tempFile).Length / 1MB, 2)
             $savings = [math]::Round((1 - ($newSize / $originalSize)) * 100, 1)
             
-            Write-Host "    ✓ Compressed: $newSize MB (Saved: $savings%)" -ForegroundColor Green
+            Write-Host "    Compressed: $newSize MB (Saved: $savings%)" -ForegroundColor Green
             
             # Replace original with compressed
             Move-Item $tempFile $video.FullName -Force
         } else {
-            Write-Host "    ✗ Compression failed for $($video.Name)" -ForegroundColor Red
+            Write-Host "    Compression failed for $($video.Name)" -ForegroundColor Red
             if (Test-Path $tempFile) {
                 Remove-Item $tempFile -Force
             }
@@ -100,4 +90,3 @@ foreach ($dir in $directories) {
 Write-Host "Compression complete!" -ForegroundColor Green
 Write-Host "Original videos backed up to: $backupDir" -ForegroundColor Cyan
 Write-Host ""
-

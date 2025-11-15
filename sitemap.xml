@@ -13,7 +13,7 @@
     <!-- Homepage - Highest Priority -->
     <url>
         <loc>https://mapleprints.ca/</loc>
-        <lastmod>2025-11-15</lastmod>
+        <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -31,7 +31,7 @@
     <!-- Package Page - High Priority -->
     <url>
         <loc>https://mapleprints.ca/package.html</loc>
-        <lastmod>2025-11-15</lastmod>
+        <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -49,7 +49,7 @@
     <!-- Design Service Page - High Priority -->
     <url>
         <loc>https://mapleprints.ca/design.html</loc>
-        <lastmod>2025-11-15</lastmod>
+        <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -72,7 +72,7 @@
     <!-- Testimonials Page - Medium Priority -->
     <url>
         <loc>https://mapleprints.ca/testimonials.html</loc>
-        <lastmod>2025-11-15</lastmod>
+        <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
