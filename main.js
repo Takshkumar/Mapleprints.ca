@@ -214,7 +214,7 @@ class MaplePrints {
     let autoplayTimeout = null;
     const autoplayDelay = 8000; // 8 seconds default, will use video duration if available
     let carouselItems = [];
-    const videoBasePath = "resources/videos/";
+    const videoBasePath = "resources/carousel-videos/";
     const maxVideos = 20; // Maximum number of videos to check
 
     // Get video element from carousel item
@@ -261,7 +261,7 @@ class MaplePrints {
       const existingVideos = results.filter(result => result.exists);
       
       if (existingVideos.length === 0) {
-        console.warn("No videos found in resources/videos/ folder");
+        console.warn("No videos found in resources/carousel-videos/ folder");
         return;
       }
       
