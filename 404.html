@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | MaplePrints</title>
+    <meta name="robots" content="noindex, follow" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="css/index-styles.min.css">
+
+    <style>
+        .error-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #f5f3f0 100%);
+        }
+
+        color: var(--text-primary);
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--cta-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 64, 129, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="resources/maple-logo.png" alt="MaplePrints Logo" />
+                MaplePrints
+            </a>
+
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="package.html">Package</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <a href="index.html#contact" class="btn btn-primary">Start Your Design</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <section class="error-section">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Oops! Page Not Found</h1>
+        <p class="error-message">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+        </p>
+        <a href="index.html" class="btn-home">Back to Home</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="resources/maple-logo.png" alt="MaplePrints Logo" />
+                MaplePrints
+            </div>
+
+            <div class="footer-tagline">Print Your First Impression</div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="package.html">Package</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2025 MaplePrints. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navMenu = document.querySelector(".nav-menu");
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navMenu.classList.toggle("active");
+                    menuToggle.classList.toggle("active");
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

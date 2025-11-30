@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Card Design Blog | Tips & Guides | MaplePrints</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Expert tips and guides on business card design, printing techniques, and branding. Learn about foil, UV coating, NFC cards, and more from MaplePrints Canada." />
+    <meta name="keywords"
+        content="business card design tips, printing guide, foil business cards, UV coating, NFC cards, branding tips, typography guide" />
+    <meta name="author" content="MaplePrints" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mapleprints.ca/blog.html" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Business Card Design Blog | Tips & Guides | MaplePrints" />
+    <meta property="og:description"
+        content="Expert tips and guides on business card design, printing techniques, and branding from MaplePrints Canada." />
+    <meta property="og:url" content="https://mapleprints.ca/blog.html" />
+    <meta property="og:site_name" content="MaplePrints" />
+    <meta property="og:image" content="https://mapleprints.ca/resources/og-image.jpg" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Business Card Design Blog | MaplePrints" />
+    <meta name="twitter:description"
+        content="Expert tips and guides on business card design and printing techniques." />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="CA" />
+    <meta name="geo.placename" content="Canada" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="resources/maple-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="resources/maple-logo.png">
+
+    <!-- Blog Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "MaplePrints Business Card Design Blog",
+        "description": "Expert tips and guides on business card design, printing techniques, and branding",
+        "url": "https://mapleprints.ca/blog.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MaplePrints",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://mapleprints.ca/resources/maple-logo.png"
+          }
+        }
+      }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mapleprints.ca/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://mapleprints.ca/blog.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-primary: #faf9f6;
+            --bg-secondary: #ffa872;
+            --text-primary: #1c1c1c;
+            --text-secondary: #555555;
+            --cta-primary: #ff4081;
+            --accent-gold: #d9a645;
+            --interactive-cyan: #00bfa5;
+            --white: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px var(--shadow-light);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: "Playfair Display", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--cta-primary);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cta-primary), #ff6b9d);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4);
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #f5f3f0 100%);
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px var(--shadow-medium);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--cta-primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: var(--white);
+            padding: 3rem 20px 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="resources/maple-logo.png" alt="MaplePrints Logo" />
+                MaplePrints
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="package.html">Packages</a></li>
+                <li><a href="design.html">Design Service</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="package.html" class="btn-primary">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <h1>Business Card Design Blog</h1>
+        <p>
+            Expert tips, guides, and insights on creating unforgettable business
+            cards that make lasting impressions.
+        </p>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section" style="padding: 40px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+            Welcome to the MaplePrints Business Card Design Blog, your ultimate resource for mastering the art of
+            professional networking.
+            In today's digital age, a physical business card remains a powerful tool for making a tangible connection.
+            Whether you are a startup founder, a creative freelancer, or a corporate executive, your business card is
+            often the first impression you leave behind.
+        </p>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">
+            Here, we explore everything from choosing the right paper stock—like our signature velvet matte—to selecting
+            the perfect foil accents.
+            Our expert designers share their secrets on typography, color theory, and layout to help you create a card
+            that not only shares your contact info but tells your brand's story.
+            Dive into our guides below and start your journey to a more memorable brand identity.
+        </p>
+    </section>
+
+    <!-- Blog Grid -->
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <a href="blog/business-card-design-tips.html" class="blog-card">
+                <img src="resources/blog-images/design-inspiration.jpg" alt="Business card design inspiration"
+                    class="blog-card-image" />
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <span>📅 November 15, 2025</span>
+                        <span>⏱️ 8 min read</span>
+                    </div>
+                    <h2>10 Business Card Design Tips That Make You Unforgettable</h2>
+                    <p>
+                        Discover the essential design principles that transform ordinary
+                        business cards into powerful networking tools. Learn about
+                        typography, color psychology, and layout strategies.
+                    </p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>
+
+            <!-- Blog Post 2 -->
+            <a href="blog/foil-vs-uv-coating.html" class="blog-card">
+                <img src="resources/blog-images/foil-uv-tips.jpg" alt="Foil and UV coating comparison"
+                    class="blog-card-image" />
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <span>📅 November 10, 2025</span>
+                        <span>⏱️ 6 min read</span>
+                    </div>
+                    <h2>Foil vs UV Coating: Which Premium Finish is Right for You?</h2>
+                    <p>
+                        Compare the stunning effects of foil stamping and UV coating.
+                        Understand when to use each technique and how they can elevate
+                        your brand presence.
+                    </p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>
+
+            <!-- Blog Post 3 -->
+            <a href="blog/choosing-fonts-business-cards.html" class="blog-card">
+                <img src="resources/blog-images/font-guide.jpg" alt="Typography guide for business cards"
+                    class="blog-card-image" />
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <span>📅 November 5, 2025</span>
+                        <span>⏱️ 7 min read</span>
+                    </div>
+                    <h2>The Ultimate Guide to Choosing Fonts for Business Cards</h2>
+                    <p>
+                        Master the art of typography for business cards. Learn about font
+                        pairing, readability, and how different typefaces convey your
+                        brand personality.
+                    </p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>
+
+            <!-- Blog Post 4 -->
+            <a href="blog/nfc-business-cards-guide.html" class="blog-card">
+                <img src="resources/hero-cards.jpg" alt="NFC business cards technology" class="blog-card-image" />
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <span>📅 October 28, 2025</span>
+                        <span>⏱️ 9 min read</span>
+                    </div>
+                    <h2>NFC Business Cards: The Future of Networking</h2>
+                    <p>
+                        Explore how NFC technology is revolutionizing business cards.
+                        Learn how to set up, customize, and leverage smart cards for
+                        modern networking.
+                    </p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>
+
+            <!-- Blog Post 5 -->
+            <a href="blog/velvet-matte-vs-glossy.html" class="blog-card">
+                <img src="resources/hero-cards.jpg" alt="Matte vs glossy business card finishes"
+                    class="blog-card-image" />
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <span>📅 October 20, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                    </div>
+                    <h2>Velvet Matte vs Glossy: Choosing Your Card Finish</h2>
+                    <p>
+                        Understand the differences between velvet matte and glossy
+                        finishes. Discover which finish best represents your brand and
+                        industry.
+                    </p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="package.html">Packages</a>
+                <a href="design.html">Design Service</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <p>&copy; 2025 MaplePrints. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="main.min.js"></script>
+</body>
+
+</html>

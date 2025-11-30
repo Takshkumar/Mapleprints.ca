@@ -1,0 +1,19 @@
+# MaplePrints
+
+> Premium Business Card Printing Service in Canada
+
+MaplePrints offers high-quality business cards with velvet matte finishes, foil stamping, and spot UV options. We provide a unique "hand-in-hand" design service where customers work directly with a professional designer via WhatsApp.
+
+## Main Pages
+
+- [Home](https://mapleprints.ca/) - Main landing page with services and portfolio.
+- [Package](https://mapleprints.ca/package.html) - Our all-inclusive $250 premium package details.
+- [Design](https://mapleprints.ca/design.html) - Information about our design services.
+- [Blog](https://mapleprints.ca/blog.html) - Tips and guides for business cards and networking.
+- [Testimonials](https://mapleprints.ca/testimonials.html) - Customer reviews and success stories.
+
+## Key Offerings
+
+- **Premium Package**: 1000 cards, velvet matte, foil/UV, NFC keychain, design support.
+- **Design Service**: Direct WhatsApp communication with designers.
+- **Materials**: Velvet matte paper, gold/silver foil, spot UV coating.

@@ -21,6 +21,7 @@ class MaplePrints {
     // Mobile menu toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
     if (menuToggle) {
       menuToggle.addEventListener("click", () => {
@@ -28,6 +29,22 @@ class MaplePrints {
         menuToggle.classList.toggle("active");
       });
     }
+
+    // Update active nav link on click
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove("active"));
+        // Add active class to clicked link if it's not the CTA button
+        if (!link.classList.contains("btn-primary")) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Handle hash in URL on page load
+    this.handleHashChange();
+    window.addEventListener('hashchange', () => this.handleHashChange());
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -92,6 +109,23 @@ class MaplePrints {
     document.querySelectorAll(".animate-on-scroll").forEach((el) => {
       observer.observe(el);
     });
+  }
+
+  handleHashChange() {
+    const hash = window.location.hash;
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    
+    if (hash) {
+      // Remove active class from all links
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === hash || 
+            (hash === '#faq' && link.getAttribute('href') === '#faq' && link.textContent.trim() === 'FAQ')) {
+          link.classList.add('active');
+        } else if (!link.classList.contains('btn-primary')) {
+          link.classList.remove('active');
+        }
+      });
+    }
   }
 
   animatePackageCard(card) {
