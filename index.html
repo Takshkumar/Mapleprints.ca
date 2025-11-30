@@ -634,1005 +634,116 @@
 
       .nav-menu {
         display: none;
-      }
-    }
-  </style>
-
-  <!-- External Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-
-  <link rel="stylesheet" href="css/index-styles.min.css">
-</head>
-
-<body>
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a href="index.html" class="logo" aria-label="MaplePrints Home">
-        <img src="resources/maple-logo.png" alt="MaplePrints - Premium Business Cards Canada Logo" width="40"
-          height="40" loading="eager" />
-        MaplePrints
-      </a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
-
-      <ul class="nav-menu">
-        <li><a href="/" class="active" aria-label="Home">Home</a></li>
-        <li>
-          <a href="package.html" aria-label="Business Card Packages">Package</a>
-        </li>
-
-        <li><a href="#faq" aria-label="FAQ">FAQ</a></li>
-        <li><a href="blog.html" aria-label="Blog">Blog</a></li>
-        <li><a href="#contact" aria-label="Contact">Contact</a></li>
-        <li>
-          <a href="#contact" class="btn btn-primary" data-whatsapp="general-inquiry"
-            aria-label="Start Your Design">Start Your Design</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            Canada's Finest Business Cards - Designed Hand-in-Hand with
-            Expert Designers
-          </h1>
-          <p class="hero-subtitle">
-            Experience luxury printing in Canada with personal designer
-            support. Professional services with velvet matte paper,
-            foil coating, and free delivery across Canada.
-          </p>
-
-          <div class="hero-offer">
-            <div class="offer-price">
-              <span class="offer-original">$300</span>
-              $250
-            </div>
-            <p><strong>1000 Premium Business Cards</strong></p>
-            <p>
-              ✓ Thick as a credit card • ✓ Foil & UV Options • ✓ 1 FREE NFC
-              Keychain • ✓ Free Delivery
-            </p>
-          </div>
-
-          <div class="hero-cta">
-            <button class="btn btn-primary btn-large" data-whatsapp="existing-design">
-              I Already Have a Design
-            </button>
-            <button class="btn btn-secondary btn-large" data-whatsapp="need-design">
-              I Need a Design
-            </button>
-          </div>
-        </div>
-
-        <div class="hero-video-showcase">
-          <div class="circular-video-gallery" id="heroVideoGallery">
-            <!-- Videos will be dynamically loaded here -->
-          </div>
-          <div class="video-controls">
-            <button class="video-nav-btn" id="prevVideoBtn" aria-label="Previous video">
-              ‹
-            </button>
-            <button class="video-nav-btn" id="nextVideoBtn" aria-label="Next video">
-              ›
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Package Showcase -->
-    <section class="section" id="packages">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>All-Inclusive Business Card Packages</h2>
-          <p>
-            Professional business cards designed to make lasting impressions
-            across Canada. Choose from our premium packages with expert design
-            support.
-          </p>
-        </div>
-
-        <div class="package-grid">
-          <div class="package-card animate-on-scroll">
-            <h3 class="package-title">Premium Business Cards</h3>
-            <div class="package-price">$250</div>
-            <div class="package-original">Regular Price: $300</div>
-
-            <div class="package-highlight">
-              🎊 New Year Special - Save $50!
-            </div>
-
-            <ul class="package-features">
-              <li>1000 Premium Business Cards</li>
-              <li>Thick as a credit card paper</li>
-              <li>Gold/Silver Foil Options</li>
-              <li>UV Coating Available</li>
-              <li>1 FREE NFC Keychain</li>
-              <li>Free Professional Design Support</li>
-              <li>Free Delivery</li>
-              <li>10-12 Business Days Delivery</li>
-            </ul>
-
-            <button class="btn btn-primary btn-large" data-whatsapp="existing-design">
-              Order Now
-            </button>
-          </div>
-
-          <div class="package-card animate-on-scroll">
-            <h3 class="package-title">Design Service Add-on</h3>
-            <div class="package-price">$20</div>
-            <div style="
-                  font-size: 0.9rem;
-                  color: var(--text-secondary);
-                  margin-bottom: 1rem;
-                ">
-              (Credited toward your final order)
-            </div>
-
-            <div class="package-highlight">
-              ✨ Personal Designer Assignment
-            </div>
-
-            <ul class="package-features">
-              <li>One-on-One Designer Consultation</li>
-              <li>Custom Design Creation</li>
-              <li>3 Design Revisions Included</li>
-              <li>Professional Brand Integration</li>
-              <li>File Preparation & Optimization</li>
-              <li>Direct WhatsApp Communication</li>
-              <li>24-Hour Designer Response Time</li>
-              <li>100% Satisfaction Guarantee</li>
-            </ul>
-
-            <button class="btn btn-secondary btn-large" data-whatsapp="need-design">
-              Start Design
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Design Process Section -->
-    <section class="section section-alt" id="process">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>The Hand-in-Hand Design Process</h2>
-          <p>How we collaborate to create your perfect business cards</p>
-        </div>
-
-        <div class="process-steps animate-on-scroll">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Order & Connect</h3>
-            <p class="step-desc">
-              Place your order and instantly connect with your personal designer
-              via WhatsApp.
-            </p>
-          </div>
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <h3 class="step-title">Collaborate</h3>
-            <p class="step-desc">
-              Share your vision, logo, and details. Your designer works with you
-              in real-time.
-            </p>
-          </div>
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Review</h3>
-            <p class="step-desc">
-              Receive custom design concepts and request unlimited revisions
-              until it's perfect.
-            </p>
-          </div>
-          <div class="process-step">
-            <div class="step-number">4</div>
-            <h3 class="step-title">Print & Ship</h3>
-            <p class="step-desc">
-              Once approved, we print on premium materials and ship directly to
-              your door.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Premium Materials Guide -->
-    <section class="section" id="materials">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>Premium Materials Guide</h2>
-          <p>Discover the luxury finishes that set us apart</p>
-        </div>
-
-        <div class="materials-grid">
-          <div class="material-card animate-on-scroll">
-            <div class="material-content">
-              <h3 class="material-title">Velvet Matte</h3>
-              <p>
-                A soft-touch finish that feels like rose petals. It adds a layer
-                of sophistication and protects your cards from scratches and
-                fingerprints.
-              </p>
-            </div>
-          </div>
-          <div class="material-card animate-on-scroll">
-            <div class="material-content">
-              <h3 class="material-title">Premium Foil Stamping</h3>
-              <p>
-                Metallic foil stamping that catches the light and adds a
-                luxurious shine to your logo or key details. Available in
-                Gold, Silver, Red, and Blue.
-              </p>
-            </div>
-          </div>
-          <div class="material-card animate-on-scroll">
-            <div class="material-content">
-              <h3 class="material-title">Custom Shapes</h3>
-              <p>
-                Stand out from the stack with 36 unique die-cut shapes. From
-                rounded corners to geometric designs, we have the perfect shape
-                for your brand.
-              </p>
-            </div>
-          </div>
-          <div class="material-card animate-on-scroll">
-            <div class="material-content">
-              <h3 class="material-title">Spot UV</h3>
-              <p>
-                A clear, glossy coating applied to specific areas of your design.
-                It creates a striking contrast against the matte background.
-              </p>
-            </div>
-          </div>
-          <div class="material-card animate-on-scroll">
-            <div class="material-content">
-              <h3 class="material-title">Free NFC Keychain</h3>
-              <p>
-                A smart keychain with embedded chip that allows you to share your contact info
-                instantly by tapping against a smartphone. Included free with every package.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section features" id="features">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>Why Choose MaplePrints for Business Cards in Canada?</h2>
-          <p>
-            Premium quality printing services, exceptional customer support,
-            and outstanding results for Canadian businesses
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">🎨</div>
-            <h3 class="feature-title">Hand-in-Hand Design</h3>
-            <p>
-              Work directly with professional designers who understand your
-              vision and brand requirements.
-            </p>
-          </div>
-
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">💎</div>
-            <h3 class="feature-title">Premium Materials</h3>
-            <p>
-              Thick as a credit card velvet matte paper with luxurious foil
-              and UV coating options for maximum impact.
-            </p>
-          </div>
-
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">⚡</div>
-            <h3 class="feature-title">Fast Delivery</h3>
-            <p>
-              Free delivery within 10-12 business days. Rush options available
-              for urgent needs.
-            </p>
-          </div>
-
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">📱</div>
-            <h3 class="feature-title">WhatsApp Support</h3>
-            <p>
-              Direct communication with your personal designer via WhatsApp
-              for seamless collaboration.
-            </p>
-          </div>
-
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">🚚</div>
-            <h3 class="feature-title">Free Delivery</h3>
-            <p>
-              Complimentary shipping on all orders. No hidden fees, no
-              surprises at checkout.
-            </p>
-          </div>
-
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">🏆</div>
-            <h3 class="feature-title">Satisfaction Guarantee</h3>
-            <p>
-              100% satisfaction guarantee with free reprints if you're not
-              completely happy.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>Hear from Our Happy Clients</h2>
-          <p>Real stories from satisfied customers</p>
-        </div>
-
-        <div class="testimonial-carousel splide">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <div class="testimonial-card">
-                  <img src="resources/testimonials/customer-1.jpg" alt="Sarah Johnson" class="testimonial-avatar"
-                    loading="lazy" width="60" height="60" />
-                  <div class="testimonial-rating">★★★★★</div>
-                  <p class="testimonial-text">
-                    "The quality exceeded my expectations! The velvet matte
-                    finish feels incredible, and the gold foil details are
-                    perfect. My designer was so helpful throughout the
-                    process."
-                  </p>
-                  <div class="testimonial-author">Sarah Johnson</div>
-                  <div class="testimonial-role">
-                    Marketing Director, TechStart Inc.
-                  </div>
-                </div>
-              </li>
-
-              <li class="splide__slide">
-                <div class="testimonial-card">
-                  <img src="resources/testimonials/customer-2.jpg" alt="Michael Chen" class="testimonial-avatar"
-                    loading="lazy" width="60" height="60" />
-                  <div class="testimonial-rating">★★★★★</div>
-                  <p class="testimonial-text">
-                    "Outstanding service from start to finish. The
-                    hand-in-hand design approach made all the difference. My
-                    business cards are now conversation starters at every
-                    meeting."
-                  </p>
-                  <div class="testimonial-author">Michael Chen</div>
-                  <div class="testimonial-role">Founder, Chen Consulting</div>
-                </div>
-              </li>
-
-              <li class="splide__slide">
-                <div class="testimonial-card">
-                  <img src="resources/testimonials/customer-3.jpg" alt="David Rodriguez" class="testimonial-avatar"
-                    loading="lazy" width="60" height="60" />
-                  <div class="testimonial-rating">★★★★★</div>
-                  <p class="testimonial-text">
-                    "Professional, fast, and flawless. The NFC keychains were
-                    a bonus that really impressed my clients. Will definitely
-                    order again!"
-                  </p>
-                  <div class="testimonial-author">David Rodriguez</div>
-                  <div class="testimonial-role">
-                    Creative Director, Design Studio
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>Design Tips & Inspiration</h2>
-          <p>Expert advice for creating memorable business cards</p>
-        </div>
-
-        <div class="blog-grid">
-          <article class="blog-card animate-on-scroll">
-            <img src="resources/blog-images/font-guide.jpg" alt="Typography Guide" class="blog-image" loading="lazy"
-              width="300" height="200" />
-            <div class="blog-content">
-              <div class="blog-meta">5 min read • Design Tips</div>
-              <h3 class="blog-title">Choosing the Right Font</h3>
-              <p class="blog-excerpt">
-                Learn how to select typography that reflects your brand
-                personality and ensures readability.
-              </p>
-              <a href="#" class="btn btn-secondary">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-card animate-on-scroll">
-            <img src="resources/blog-images/foil-uv-tips.jpg" alt="Foil & UV Tips" class="blog-image" loading="lazy"
-              width="300" height="200" />
-            <div class="blog-content">
-              <div class="blog-meta">3 min read • Printing Tips</div>
-              <h3 class="blog-title">Foil & UV Tips</h3>
-              <p class="blog-excerpt">
-                Maximize the impact of premium finishes with these
-                professional design guidelines.
-              </p>
-              <a href="#" class="btn btn-secondary">Read More</a>
-            </div>
-          </article>
-
-          <article class="blog-card animate-on-scroll">
-            <img src="resources/blog-images/design-inspiration.jpg" alt="Design Inspiration" class="blog-image"
-              loading="lazy" width="300" height="200" />
-            <div class="blog-content">
-              <div class="blog-meta">7 min read • Inspiration</div>
-              <h3 class="blog-title">Design Inspiration</h3>
-              <p class="blog-excerpt">
-                Get inspired by these stunning business card designs from
-                various industries.
-              </p>
-              <a href="#" class="btn btn-secondary">Read More</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section - SEO Optimized & Expanded -->
-    <section id="faq" class="section">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>Frequently Asked Questions</h2>
-          <p>
-            Everything you need to know about our professional printing
-            services in Canada
-          </p>
-        </div>
-
-        <div class="faq-container" style="max-width: 900px; margin: 3rem auto 0">
-
-          <!-- Ordering & Design -->
-          <h3 style="margin: 2rem 0 1rem; color: var(--primary);">Ordering & Design</h3>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">How much do premium business cards cost in Canada?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Our high-quality package costs <strong>$250 CAD for 1000 cards</strong>, regularly priced at $300. This
-                includes velvet matte paper, foil/UV coating options, 1 FREE NFC keychain, and free delivery across
-                Canada.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Do you provide design services?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Yes! We offer <strong>personal designer support for $20</strong> (credited toward your final order).
-                You'll work hand-in-hand with a professional designer via WhatsApp to create your custom design.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">What file formats do you accept for printing?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                We prefer print-ready <strong>PDF</strong> files with embedded fonts. We also accept high-resolution
-                JPG, PNG (300 DPI), AI, and PSD files. If you're unsure, our designers can help check your files for
-                free.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Can I see a proof before printing?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Absolutely. We always provide a digital proof for your approval before we send anything to print. We
-                want to ensure everything is perfect.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Do you offer double-sided printing?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Yes, double-sided printing is included in our standard price. You can have a full-color design on both
-                the front and back of your card at no extra cost.
-              </p>
-            </div>
-          </div>
-
-          <!-- Materials & Finishes -->
-          <h3 style="margin: 2rem 0 1rem; color: var(--primary);">Materials & Finishes</h3>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">What is "Velvet Matte" finish?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Velvet matte (also known as "soft-touch") is a premium lamination that gives the card a smooth,
-                suede-like texture. It feels luxurious to the touch and helps protect the card from scratches and
-                scuffs.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">What foil colors are available?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                We offer standard <strong>Gold and Silver</strong> foil. We also have options for Red, Blue, and
-                Holographic foil upon request for specific custom orders.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">What is the difference between Foil and Spot UV?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                <strong>Foil</strong> is a metallic material stamped onto the card to add shine and color (like gold).
-                <strong>Spot UV</strong> is a clear, glossy coating that highlights specific areas (like a logo) against
-                the matte background. Both add a premium tactile element.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Are your cards eco-friendly?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                We strive to be environmentally conscious. Our paper is sourced from sustainable forests, and we use
-                vegetable-based inks where possible. Our high-quality cards are also designed to be kept, not thrown
-                away, reducing waste.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Can I write on the cards?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Our velvet matte finish is coated, so standard ballpoint pens may smudge. We recommend using a permanent
-                marker (like a Sharpie) if you need to write on them.
-              </p>
-            </div>
-          </div>
-
-          <!-- Shipping & Delivery -->
-          <h3 style="margin: 2rem 0 1rem; color: var(--primary);">Shipping & Delivery</h3>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">How long does delivery take?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Standard delivery is <strong>10-12 business days</strong> across Canada. This includes production time
-                and shipping.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Is shipping really free?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Yes! We offer <strong>free shipping</strong> to all provinces in Canada. There are no hidden fees at
-                checkout.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Do you ship to the USA?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Currently, we focus on serving the Canadian market. However, please contact us via WhatsApp for special
-                US shipping requests, and we can provide a quote.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">How can I track my order?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Once your order ships, you will receive a tracking number via email or WhatsApp so you can monitor its
-                journey to your doorstep.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Do you offer rush printing?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Yes, we have rush options available for an additional fee. Please contact us immediately if you have a
-                tight deadline so we can prioritize your order.
-              </p>
-            </div>
-          </div>
-
-          <!-- After Sales -->
-          <h3 style="margin: 2rem 0 1rem; color: var(--primary);">After Sales & Support</h3>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">What if I'm not happy with my cards?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                We offer a <strong>100% satisfaction guarantee</strong>. If there is a printing error or quality issue
-                on our end, we will reprint your cards for free.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">How do I reorder?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                Reordering is easy! Just message us on WhatsApp or email us. We keep your design files on record, so we
-                can send a new batch to print immediately.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">Can I split my order of 1000 cards into two names?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                The 1000 card package is for a single design/name. This is because of the offset printing process we use
-                to keep costs low. If you need cards for multiple employees, please contact us for a custom bulk quote.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question">
-            <h4 class="faq-question" itemprop="name">What is the NFC keychain?</h4>
-            <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-              <p itemprop="text">
-                The NFC keychain is a smart device that lets you share your digital business card or website by simply
-                tapping it against a compatible smartphone. It's a great modern complement to your physical cards.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Ultimate Guide to Business Cards Section -->
-    <section class="section">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>The Ultimate Guide to Premium Business Cards in Canada</h2>
-          <p>Everything you need to know about design, etiquette, and printing technology</p>
-        </div>
-
-        <div class="seo-content animate-on-scroll" style="max-width: 900px; margin: 3rem auto; line-height: 1.8;">
-
-          <!-- Table of Contents -->
-          <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
-            <h4 style="margin-bottom: 1rem;">Table of Contents</h4>
-            <ul
-              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; list-style: none; padding: 0;">
-              <li><a href="#etiquette" style="text-decoration: none; color: var(--primary);">1. Business Card
-                  Etiquette</a></li>
-              <li><a href="#psychology" style="text-decoration: none; color: var(--primary);">2. The Psychology of
-                  Design</a></li>
-              <li><a href="#technical" style="text-decoration: none; color: var(--primary);">3. Technical Printing
-                  Guide</a></li>
-              <li><a href="#marketing" style="text-decoration: none; color: var(--primary);">4. Marketing Strategy</a>
-              </li>
-            </ul>
-          </div>
-
-          <div id="etiquette" style="margin-bottom: 4rem;">
-            <h3>1. Business Card Etiquette in Canada and Beyond</h3>
-            <p>
-              In the digital age, the physical exchange of a <strong>business card</strong> remains a cornerstone of
-              professional networking. It is often the first tangible interaction between two professionals, setting the
-              tone for the relationship.
-            </p>
-
-            <h4>The Art of the Exchange</h4>
-            <p>
-              When exchanging cards, treat the card as an extension of the person. Never simply slide it across a table
-              or hand it over without making eye contact.
-            </p>
-            <ul>
-              <li><strong>Presentation:</strong> Always present your card with the text facing the recipient, so they
-                can read it immediately.</li>
-              <li><strong>Reception:</strong> When receiving a card, take a moment to read it. Comment on the design or
-                a specific detail (e.g., "I see your office is in downtown Toronto"). This shows respect and interest.
-              </li>
-              <li><strong>Storage:</strong> Place the card in a cardholder or a safe pocket. Never stuff it into a back
-                pocket or a cluttered wallet in front of the giver.</li>
-            </ul>
-
-            <h4>International Context</h4>
-            <p>
-              Canada is a multicultural hub. Understanding global etiquette can give you an edge. In Asian cultures
-              (e.g., Japan, China), use both hands to present and receive cards, and never write on a card you've just
-              received. In Europe, cards are often exchanged at the end of a meeting, whereas in North America, it's
-              typically at the beginning.
-            </p>
-          </div>
-
-          <div id="psychology" style="margin-bottom: 4rem;">
-            <h3>2. The Psychology of Business Card Design</h3>
-            <p>
-              Your card is a silent ambassador. Every element, from color to texture, communicates a subconscious
-              message about your brand.
-            </p>
-
-            <h4>Color Theory in Branding</h4>
-            <p>
-              Colors evoke specific emotional responses. Choosing the right palette for your <strong>custom business
-                cards</strong> is crucial.
-            </p>
-            <ul>
-              <li><strong>Blue:</strong> Represents trust, security, and professionalism. Ideal for finance, law, and
-                healthcare.</li>
-              <li><strong>Red:</strong> conveys energy, passion, and urgency. Great for startups, food industries, and
-                bold brands.</li>
-              <li><strong>Black:</strong> The color of luxury, sophistication, and authority. Perfect for high-end
-                services, fashion, and premium consulting.</li>
-              <li><strong>White:</strong> Symbolizes purity, cleanliness, and minimalism. Often used by architects and
-                designers.</li>
-              <li><strong>Gold/Silver:</strong> Associated with wealth, prestige, and high quality. Our <strong>foil
-                  business cards</strong> leverage this to create an immediate impression of value.</li>
-            </ul>
-
-            <h4>Typography Mastery</h4>
-            <p>
-              Legibility is paramount, but style matters too.
-            </p>
-            <ul>
-              <li><strong>Serif Fonts (e.g., Times New Roman, Playfair Display):</strong> Traditional, reliable, and
-                respectable. Good for law firms and academic institutions.</li>
-              <li><strong>Sans-Serif Fonts (e.g., Helvetica, Montserrat):</strong> Modern, clean, and approachable.
-                Preferred by tech companies and startups.</li>
-              <li><strong>Font Pairing:</strong> A common rule is to use one font for headers and another for body text,
-                but never use more than two or three font families on a single card to avoid clutter.</li>
-            </ul>
-
-            <h4>The Science of Touch (Haptics)</h4>
-            <p>
-              Research in haptic perception shows that physical touch influences our perception of value. A flimsy,
-              lightweight card feels "cheap" and disposable. In contrast, a thick, heavy card with a <strong>velvet
-                matte finish</strong> feels substantial and permanent.
-            </p>
-            <p>
-              Our "soft-touch" lamination doesn't just feel good; it creates a neurological "stickiness," making the
-              recipient more likely to remember the interaction. Adding raised elements like <strong>Spot UV</strong> or
-              foil further engages the sense of touch, reinforcing the memory.
-            </p>
-          </div>
-
-          <div id="technical" style="margin-bottom: 4rem;">
-            <h3>3. Technical Printing Guide: Specs That Matter</h3>
-            <p>
-              Understanding print terminology helps you make informed decisions when ordering <strong>business cards
-                online</strong>.
-            </p>
-
-            <h4>Paper Weight and Thickness</h4>
-            <p>
-              Paper thickness is measured in points (pt). One point is 1/1000th of an inch.
-            </p>
-            <ul>
-              <li><strong>14pt:</strong> The standard for most budget cards. It's decent but can feel flexible.</li>
-              <li><strong>16pt:</strong> A step up, offering more rigidity and a premium feel.</li>
-              <li><strong>Premium Thickness (Our Standard):</strong> We use a stock that rivals credit card thickness,
-                often enhanced with lamination to reach an equivalent of 18pt-20pt feel. This ensures your card doesn't
-                bend easily in a wallet.</li>
-            </ul>
-
-            <h4>Print Finishes Explained</h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
-              <div>
-                <h5>Foil Stamping</h5>
-                <p>
-                  A process where heat and pressure are used to apply a metallic foil to the paper. Unlike metallic ink,
-                  which is flat, foil stamping sits on top of the paper and reflects light brilliantly. It's the gold
-                  standard for luxury.
-                </p>
-              </div>
-              <div>
-                <h5>Spot UV (Ultraviolet)</h5>
-                <p>
-                  A clear, shiny coating applied to specific areas of the card (like a logo or pattern). It creates a
-                  striking contrast between the matte background and the glossy highlight. It's subtle yet impactful.
-                </p>
-              </div>
-            </div>
-
-            <h4>Bleed, Trim, and Safe Zone</h4>
-            <p>
-              When designing for print, three lines matter:
-            </p>
-            <ol>
-              <li><strong>Bleed Line:</strong> The artwork must extend to this line (usually 0.125" beyond the trim) to
-                avoid white edges after cutting.</li>
-              <li><strong>Trim Line:</strong> Where the card is actually cut.</li>
-              <li><strong>Safe Zone:</strong> Keep all text and logos inside this line (usually 0.125" inside the trim)
-                to ensure nothing gets chopped off.</li>
-            </ol>
-          </div>
-
-          <div id="marketing" style="margin-bottom: 2rem;">
-            <h3>4. Strategic Marketing with Business Cards</h3>
-            <p>
-              A business card is more than contact info; it's a marketing tool.
-            </p>
-
-            <h4>5 Ways to Use Cards to Grow Your Network</h4>
-            <ol>
-              <li><strong>The "Two-Card" Rule:</strong> When meeting someone, give them two cards—one for them, and one
-                for them to pass on to a referral.</li>
-              <li><strong>The Memory Hook:</strong> Write a note on the back (if possible) about your conversation.
-                "Great chatting about [Topic]." This personalizes the connection.</li>
-              <li><strong>Strategic Placement:</strong> Leave cards in coffee shops, community boards, or partner
-                businesses (with permission).</li>
-              <li><strong>Direct Mail Inserts:</strong> Include a card in every package you ship. It adds a personal
-                touch to e-commerce orders.</li>
-              <li><strong>Interactive Elements:</strong> Use QR codes or our <strong>NFC keychains</strong> to bridge
-                the physical and digital worlds.</li>
-            </ol>
-
-            <h4>Digital vs. Physical: Why You Need Both</h4>
-            <p>
-              While LinkedIn and digital contacts are essential, they lack the intimacy of a physical exchange. A
-              digital contact is easily forgotten in a phone's address book. A physical card on a desk is a persistent
-              visual reminder of your brand. The most effective strategy integrates both: a premium physical card that
-              leads to a robust digital presence via a QR code or NFC tap.
-            </p>
-          </div>
-
-          <div
-            style="background: #fff5f8; padding: 2rem; border-radius: 12px; border-left: 5px solid var(--secondary);">
-            <h4>Ready to Elevate Your Brand?</h4>
-            <p style="margin-bottom: 0;">
-              Now that you understand the science and art behind premium business cards, it's time to create your own.
-              At MaplePrints, we combine expert design, premium materials, and cutting-edge printing technology to
-              deliver cards that you'll be proud to hand out.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <div class="text-center animate-on-scroll">
-          <h2>Ready to Get Started?</h2>
-          <p>Connect with us today and elevate your professional image</p>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem" class="animate-on-scroll">
-          <div style="
-                background: var(--white);
-                padding: 2rem;
-                border-radius: 12px;
-                box-shadow: 0 8px 25px var(--shadow-light);
-                max-width: 600px;
-                margin: 0 auto;
+        <body>< !-- Navigation --><nav class="navbar" role="navigation" aria-label="Main navigation"><div class="nav-container"><a href="index.html" class="logo" aria-label="MaplePrints Home"><img src="resources/maple-logo.png" alt="MaplePrints - Premium Business Cards Canada Logo" width="40"
+        height="40" loading="eager" />MaplePrints </a><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button><ul class="nav-menu"><li><a href="/" class="active" aria-label="Home">Home</a></li><li><a href="package.html" aria-label="Business Card Packages">Package</a></li><li><a href="#faq" aria-label="FAQ">FAQ</a></li><li><a href="blog.html" aria-label="Blog">Blog</a></li><li><a href="#contact" aria-label="Contact">Contact</a></li><li><a href="#contact" class="btn btn-primary" data-whatsapp="general-inquiry"
+        aria-label="Start Your Design">Start Your Design</a></li></ul></div></nav>< !-- Hero Section --><main><section id="home" class="hero"><div class="hero-content"><div class="hero-text"><h1 class="hero-title">Canada's Finest Business Cards - Designed Hand-in-Hand with
+ Expert Designers </h1><p class="hero-subtitle">Experience luxury printing in Canada with personal designer support. Professional services with velvet matte paper,
+        foil coating,
+        and free delivery across Canada. </p><div class="hero-offer"><div class="offer-price"><span class="offer-original">$300</span>$250 </div><p><strong>1000 Premium Business Cards</strong></p><p>✓ Thick as a credit card • ✓ Foil & UV Options • ✓ 1 FREE NFC Keychain • ✓ Free Delivery </p></div><div class="hero-cta"><button class="btn btn-primary btn-large" data-whatsapp="existing-design">I Already Have a Design </button><button class="btn btn-secondary btn-large" data-whatsapp="need-design">I Need a Design </button></div></div><div class="hero-video-showcase"><div class="circular-video-gallery" id="heroVideoGallery">< !-- Videos will be dynamically loaded here --></div><div class="video-controls"><button class="video-nav-btn" id="prevVideoBtn" aria-label="Previous video">‹ </button><button class="video-nav-btn" id="nextVideoBtn" aria-label="Next video">› </button></div></div></div></section>< !-- Package Showcase --><section class="section" id="packages"><div class="container"><div class="text-center animate-on-scroll"><h2>All-Inclusive Business Card Packages</h2><p>Professional business cards designed to make lasting impressions across Canada. Choose from our premium packages with expert design support. </p></div><div class="package-grid"><div class="package-card animate-on-scroll"><h3 class="package-title">Premium Business Cards</h3><div class="package-price">$250</div><div class="package-original">Regular Price: $300</div> <div class="package-highlight" > 🎊 New Year Special - Save $50! </div> <ul class="package-features" > <li>1000 Premium Business Cards</li> <li>Thick as a credit card paper</li> <li>Gold/Silver Foil Options</li> <li>UV Coating Available</li> <li>1 FREE NFC Keychain</li> <li>Free Professional Design Support</li> <li>Free Delivery</li> <li>10-12 Business Days Delivery</li> </ul> <button class="btn btn-primary btn-large" data-whatsapp="existing-design" > Order Now </button> </div> <div class="package-card animate-on-scroll" > <h3 class="package-title" >Design Service Add-on</h3> <div class="package-price" >$20</div> <div style="
+ font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        ">
+(Credited toward your final order) </div><div class="package-highlight">✨ Personal Designer Assignment </div><ul class="package-features"><li>One-on-One Designer Consultation</li><li>Custom Design Creation</li><li>3 Design Revisions Included</li><li>Professional Brand Integration</li><li>File Preparation & Optimization</li><li>Direct WhatsApp Communication</li><li>24-Hour Designer Response Time</li><li>100% Satisfaction Guarantee</li></ul><button class="btn btn-secondary btn-large" data-whatsapp="need-design">Start Design </button></div></div></div></section>< !-- Design Process Section --><section class="section section-alt" id="process"><div class="container"><div class="text-center animate-on-scroll"><h2>The Hand-in-Hand Design Process</h2><p>How we collaborate to create your perfect business cards</p></div><div class="process-steps animate-on-scroll"><div class="process-step"><div class="step-number">1</div><h3 class="step-title">Order & Connect</h3><p class="step-desc">Place your order and instantly connect with your personal designer via WhatsApp. </p></div><div class="process-step"><div class="step-number">2</div><h3 class="step-title">Collaborate</h3><p class="step-desc">Share your vision,
+        logo,
+        and details. Your designer works with you in real-time. </p></div><div class="process-step"><div class="step-number">3</div><h3 class="step-title">Review</h3><p class="step-desc">Receive custom design concepts and request unlimited revisions until it's perfect.
+ </p></div><div class="process-step"><div class="step-number">4</div><h3 class="step-title">Print & Ship</h3><p class="step-desc">Once approved,
+        we print on premium materials and ship directly to your door. </p></div></div></div></section>< !-- Premium Materials Guide --><section class="section" id="materials"><div class="container"><div class="text-center animate-on-scroll"><h2>Premium Materials Guide</h2><p>Discover the luxury finishes that set us apart</p></div><div class="materials-grid"><div class="material-card animate-on-scroll"><div class="material-content"><h3 class="material-title">Velvet Matte</h3><p>A soft-touch finish that feels like rose petals. It adds a layer of sophistication and protects your cards from scratches and fingerprints. </p></div></div><div class="material-card animate-on-scroll"><div class="material-content"><h3 class="material-title">Premium Foil Stamping</h3><p>Metallic foil stamping that catches the light and adds a luxurious shine to your logo or key details. Available in Gold,
+        Silver,
+        Red,
+        and Blue. </p></div></div><div class="material-card animate-on-scroll"><div class="material-content"><h3 class="material-title">Custom Shapes</h3><p>Stand out from the stack with 36 unique die-cut shapes. From rounded corners to geometric designs,
+        we have the perfect shape for your brand. </p></div></div><div class="material-card animate-on-scroll"><div class="material-content"><h3 class="material-title">Spot UV</h3><p>A clear,
+        glossy coating applied to specific areas of your design. It creates a striking contrast against the matte background. </p></div></div><div class="material-card animate-on-scroll"><div class="material-content"><h3 class="material-title">Free NFC Keychain</h3><p>A smart keychain with embedded chip that allows you to share your contact info instantly by tapping against a smartphone. Included free with every package. </p></div></div></div></div></section>< !-- Features Section --><section class="section features" id="features"><div class="container"><div class="text-center animate-on-scroll"><h2>Why Choose MaplePrints for Business Cards in Canada?</h2><p>Premium quality printing services,
+        exceptional customer support,
+        and outstanding results for Canadian businesses </p></div><div class="feature-grid"><div class="feature-card animate-on-scroll"><div class="feature-icon">🎨</div><h3 class="feature-title">Hand-in-Hand Design</h3><p>Work directly with professional designers who understand your vision and brand requirements. </p></div><div class="feature-card animate-on-scroll"><div class="feature-icon">💎</div><h3 class="feature-title">Premium Materials</h3><p>Thick as a credit card velvet matte paper with luxurious foil and UV coating options for maximum impact. </p></div><div class="feature-card animate-on-scroll"><div class="feature-icon">⚡</div><h3 class="feature-title">Fast Delivery</h3><p>Free delivery within 10-12 business days. Rush options available for urgent needs. </p></div><div class="feature-card animate-on-scroll"><div class="feature-icon">📱</div><h3 class="feature-title">WhatsApp Support</h3><p>Direct communication with your personal designer via WhatsApp for seamless collaboration. </p></div><div class="feature-card animate-on-scroll"><div class="feature-icon">🚚</div><h3 class="feature-title">Free Delivery</h3><p>Complimentary shipping on all orders. No hidden fees,
+        no surprises at checkout. </p></div><div class="feature-card animate-on-scroll"><div class="feature-icon">🏆</div><h3 class="feature-title">Satisfaction Guarantee</h3><p>100% satisfaction guarantee with free reprints if you're not
+ completely happy. </p></div></div></div></section>< !-- Testimonials Section --><section class="section testimonials"><div class="container"><div class="text-center animate-on-scroll"><h2>Hear from Our Happy Clients</h2><p>Real stories from satisfied customers</p></div><div class="testimonial-carousel splide"><div class="splide__track"><ul class="splide__list"><li class="splide__slide"><div class="testimonial-card"><img src="resources/testimonials/customer-1.jpg" alt="Sarah Johnson" class="testimonial-avatar"
+        loading="lazy" width="60" height="60" /><div class="testimonial-rating">★★★★★</div><p class="testimonial-text">"The quality exceeded my expectations! The velvet matte
+ finish feels incredible,
+        and the gold foil details are perfect. My designer was so helpful throughout the process."
+ </p><div class="testimonial-author">Sarah Johnson</div><div class="testimonial-role">Marketing Director,
+        TechStart Inc. </div></div></li><li class="splide__slide"><div class="testimonial-card"><img src="resources/testimonials/customer-2.jpg" alt="Michael Chen" class="testimonial-avatar"
+        loading="lazy" width="60" height="60" /><div class="testimonial-rating">★★★★★</div><p class="testimonial-text">"Outstanding service from start to finish. The
+ hand-in-hand design approach made all the difference. My business cards are now conversation starters at every meeting."
+ </p><div class="testimonial-author">Michael Chen</div><div class="testimonial-role">Founder,
+        Chen Consulting</div></div></li><li class="splide__slide"><div class="testimonial-card"><img src="resources/testimonials/customer-3.jpg" alt="David Rodriguez" class="testimonial-avatar"
+        loading="lazy" width="60" height="60" /><div class="testimonial-rating">★★★★★</div><p class="testimonial-text">"Professional, fast, and flawless. The NFC keychains were
+ a bonus that really impressed my clients. Will definitely order again !"
+ </p><div class="testimonial-author">David Rodriguez</div><div class="testimonial-role">Creative Director,
+        Design Studio </div></div></li></ul></div></div></div></section>< !-- Blog Section --><section id="blog" class="section"><div class="container"><div class="text-center animate-on-scroll"><h2>Design Tips & Inspiration</h2><p>Expert advice for creating memorable business cards</p></div><div class="blog-grid"><article class="blog-card animate-on-scroll"><img src="resources/blog-images/font-guide.jpg" alt="Typography Guide" class="blog-image" loading="lazy"
+        width="300" height="200" /><div class="blog-content"><div class="blog-meta">5 min read • Design Tips</div><h3 class="blog-title">Choosing the Right Font</h3><p class="blog-excerpt">Learn how to select typography that reflects your brand personality and ensures readability. </p><a href="#" class="btn btn-secondary">Read More</a></div></article><article class="blog-card animate-on-scroll"><img src="resources/blog-images/foil-uv-tips.jpg" alt="Foil & UV Tips" class="blog-image" loading="lazy"
+        width="300" height="200" /><div class="blog-content"><div class="blog-meta">3 min read • Printing Tips</div><h3 class="blog-title">Foil & UV Tips</h3><p class="blog-excerpt">Maximize the impact of premium finishes with these professional design guidelines. </p><a href="#" class="btn btn-secondary">Read More</a></div></article><article class="blog-card animate-on-scroll"><img src="resources/blog-images/design-inspiration.jpg" alt="Design Inspiration" class="blog-image"
+        loading="lazy" width="300" height="200" /><div class="blog-content"><div class="blog-meta">7 min read • Inspiration</div><h3 class="blog-title">Design Inspiration</h3><p class="blog-excerpt">Get inspired by these stunning business card designs from various industries. </p><a href="#" class="btn btn-secondary">Read More</a></div></article></div></div></section>< !-- FAQ Section - SEO Optimized & Expanded --><section id="faq" class="section"><div class="container"><div class="text-center animate-on-scroll"><h2>Frequently Asked Questions</h2><p>Everything you need to know about our professional printing services in Canada </p></div><div class="faq-container" style="max-width: 900px; margin: 3rem auto 0">< !-- Ordering & Design --><h3 style="margin: 2rem 0 1rem; color: var(--primary);">Ordering & Design</h3><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">How much do premium business cards cost in Canada?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Our high-quality package costs <strong>$250 CAD for 1000 cards</strong>,
+        regularly priced at $300. This includes velvet matte paper,
+        foil/UV coating options,
+        1 FREE NFC keychain,
+        and free delivery across Canada. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Do you provide design services?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Yes ! We offer <strong>personal designer support for $20</strong>(credited toward your final order). You'll work hand-in-hand with a professional designer via WhatsApp to create your custom design.
+ </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">What file formats do you accept for printing?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">We prefer print-ready <strong>PDF</strong>files with embedded fonts. We also accept high-resolution JPG,
+        PNG (300 DPI),
+        AI,
+        and PSD files. If you're unsure, our designers can help check your files for
+ free. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Can I see a proof before printing?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Absolutely. We always provide a digital proof for your approval before we send anything to print. We want to ensure everything is perfect. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Do you offer double-sided printing?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Yes,
+        double-sided printing is included in our standard price. You can have a full-color design on both the front and back of your card at no extra cost. </p></div></div>< !-- Materials & Finishes --><h3 style="margin: 2rem 0 1rem; color: var(--primary);">Materials & Finishes</h3><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">What is "Velvet Matte" finish?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Velvet matte (also known as "soft-touch") is a premium lamination that gives the card a smooth,
+        suede-like texture. It feels luxurious to the touch and helps protect the card from scratches and scuffs. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">What foil colors are available?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">We offer standard <strong>Gold and Silver</strong>foil. We also have options for Red,
+        Blue,
+        and Holographic foil upon request for specific custom orders. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">What is the difference between Foil and Spot UV?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text"><strong>Foil</strong>is a metallic material stamped onto the card to add shine and color (like gold). <strong>Spot UV</strong>is a clear,
+        glossy coating that highlights specific areas (like a logo) against the matte background. Both add a premium tactile element. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Are your cards eco-friendly?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">We strive to be environmentally conscious. Our paper is sourced from sustainable forests,
+        and we use vegetable-based inks where possible. Our high-quality cards are also designed to be kept,
+        not thrown away,
+        reducing waste. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Can I write on the cards?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Our velvet matte finish is coated,
+        so standard ballpoint pens may smudge. We recommend using a permanent marker (like a Sharpie) if you need to write on them. </p></div></div>< !-- Shipping & Delivery --><h3 style="margin: 2rem 0 1rem; color: var(--primary);">Shipping & Delivery</h3><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">How long does delivery take?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Standard delivery is <strong>10-12 business days</strong>across Canada. This includes production time and shipping. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Is shipping really free?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Yes ! We offer <strong>free shipping</strong>to all provinces in Canada. There are no hidden fees at checkout. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Do you ship to the USA?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Currently,
+        we focus on serving the Canadian market. However,
+        please contact us via WhatsApp for special US shipping requests,
+        and we can provide a quote. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">How can I track my order?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Once your order ships,
+        you will receive a tracking number via email or WhatsApp so you can monitor its journey to your doorstep. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Do you offer rush printing?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Yes,
+        we have rush options available for an additional fee. Please contact us immediately if you have a tight deadline so we can prioritize your order. </p></div></div>< !-- After Sales --><h3 style="margin: 2rem 0 1rem; color: var(--primary);">After Sales & Support</h3><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">What if I'm not happy with my cards?</h4>
+ <div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">We offer a <strong>100% satisfaction guarantee</strong>. If there is a printing error or quality issue on our end,
+        we will reprint your cards for free. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">How do I reorder?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">Reordering is easy ! Just message us on WhatsApp or email us. We keep your design files on record,
+        so we can send a new batch to print immediately. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">Can I split my order of 1000 cards into two names?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">The 1000 card package is for a single design/name. This is because of the offset printing process we use to keep costs low. If you need cards for multiple employees,
+        please contact us for a custom bulk quote. </p></div></div><div class="faq-item animate-on-scroll" itemscope itemtype="https://schema.org/Question"><h4 class="faq-question" itemprop="name">What is the NFC keychain?</h4><div class="faq-answer" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><p itemprop="text">The NFC keychain is a smart device that lets you share your digital business card or website by simply tapping it against a compatible smartphone. It's a great modern complement to your physical cards.
+ </p></div></div></div></div></section>< !-- Ultimate Guide to Business Cards Section --><section class="section"><div class="container"><div class="text-center animate-on-scroll"><h2>The Ultimate Guide to Premium Business Cards in Canada</h2><p>Everything you need to know about design,
+        etiquette,
+        and printing technology</p></div><div class="seo-content animate-on-scroll" style="max-width: 900px; margin: 3rem auto; line-height: 1.8;">< !-- Table of Contents --><div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-bottom: 3rem;"><h4 style="margin-bottom: 1rem;">Table of Contents</h4><ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; list-style: none; padding: 0;"><li><a href="#etiquette" style="text-decoration: none; color: var(--primary);">1. Business Card Etiquette</a></li><li><a href="#psychology" style="text-decoration: none; color: var(--primary);">2. The Psychology of Design</a></li><li><a href="#technical" style="text-decoration: none; color: var(--primary);">3. Technical Printing Guide</a></li><li><a href="#marketing" style="text-decoration: none; color: var(--primary);">4. Marketing Strategy</a></li></ul></div><div id="etiquette" style="margin-bottom: 4rem;"><h3>1. Business Card Etiquette in Canada and Beyond</h3><p>In the digital age,
+        the physical exchange of a <strong>business card</strong>remains a cornerstone of professional networking. It is often the first tangible interaction between two professionals,
+        setting the tone for the relationship. </p><h4>The Art of the Exchange</h4><p>When exchanging cards,
+        treat the card as an extension of the person. Never simply slide it across a table or hand it over without making eye contact. </p><ul><li><strong>Presentation: </strong> Always present your card with the text facing the recipient, so they can read it immediately.</li> <li><strong>Reception:</strong> When receiving a card, take a moment to read it. Comment on the design or a specific detail (e.g., "I see your office is in downtown Toronto"). This shows respect and interest. </li> <li><strong>Storage:</strong> Place the card in a cardholder or a safe pocket. Never stuff it into a back pocket or a cluttered wallet in front of the giver.</li> </ul> <h4>International Context</h4> <p> Canada is a multicultural hub. Understanding global etiquette can give you an edge. In Asian cultures (e.g., Japan, China), use both hands to present and receive cards, and never write on a card you've just
+ received. In Europe, cards are often exchanged at the end of a meeting, whereas in North America, it's
+ typically at the beginning. </p> </div> <div id="psychology" style="margin-bottom: 4rem;" > <h3>2. The Psychology of Business Card Design</h3> <p> Your card is a silent ambassador. Every element, from color to texture, communicates a subconscious message about your brand. </p> <h4>Color Theory in Branding</h4> <p> Colors evoke specific emotional responses. Choosing the right palette for your <strong>custom business cards</strong> is crucial. </p> <ul> <li><strong>Blue:</strong> Represents trust, security, and professionalism. Ideal for finance, law, and healthcare.</li> <li><strong>Red:</strong> conveys energy, passion, and urgency. Great for startups, food industries, and bold brands.</li> <li><strong>Black:</strong> The color of luxury, sophistication, and authority. Perfect for high-end services, fashion, and premium consulting.</li> <li><strong>White:</strong> Symbolizes purity, cleanliness, and minimalism. Often used by architects and designers.</li> <li><strong>Gold/Silver:</strong> Associated with wealth, prestige, and high quality. Our <strong>foil business cards</strong> leverage this to create an immediate impression of value.</li> </ul> <h4>Typography Mastery</h4> <p> Legibility is paramount, but style matters too. </p> <ul> <li><strong>Serif Fonts (e.g., Times New Roman, Playfair Display):</strong> Traditional, reliable, and respectable. Good for law firms and academic institutions.</li> <li><strong>Sans-Serif Fonts (e.g., Helvetica, Montserrat):</strong> Modern, clean, and approachable. Preferred by tech companies and startups.</li> <li><strong>Font Pairing:</strong> A common rule is to use one font for headers and another for body text,
+          but never use more than two or three font families on a single card to avoid clutter.</li> </ul> <h4>The Science of Touch (Haptics)</h4> <p> Research in haptic perception shows that physical touch influences our perception of value. A flimsy,
+          lightweight card feels "cheap" and disposable. In contrast, a thick, heavy card with a <strong>velvet matte finish</strong> feels substantial and permanent. </p> <p> Our "soft-touch" lamination doesn't just feel good; it creates a neurological "stickiness," making the
+ recipient more likely to remember the interaction. Adding raised elements like <strong>Spot UV</strong> or foil further engages the sense of touch, reinforcing the memory. </p> </div> <div id="technical" style="margin-bottom: 4rem;" > <h3>3. Technical Printing Guide: Specs That Matter</h3> <p> Understanding print terminology helps you make informed decisions when ordering <strong>business cards online</strong>. </p> <h4>Paper Weight and Thickness</h4> <p> Paper thickness is measured in points (pt). One point is 1/1000th of an inch. </p> <ul> <li><strong>14pt:</strong> The standard for most budget cards. It's decent but can feel flexible.</li>
+ <li><strong>16pt:</strong> A step up, offering more rigidity and a premium feel.</li> <li><strong>Premium Thickness (Our Standard):</strong> We use a stock that rivals credit card thickness,
+          often enhanced with lamination to reach an equivalent of 18pt-20pt feel. This ensures your card doesn't
+ bend easily in a wallet.</li> </ul> <h4>Print Finishes Explained</h4> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;" > <div> <h5>Foil Stamping</h5> <p> A process where heat and pressure are used to apply a metallic foil to the paper. Unlike metallic ink,
+          which is flat, foil stamping sits on top of the paper and reflects light brilliantly. It's the gold
+ standard for luxury. </p> </div> <div> <h5>Spot UV (Ultraviolet)</h5> <p> A clear, shiny coating applied to specific areas of the card (like a logo or pattern). It creates a striking contrast between the matte background and the glossy highlight. It's subtle yet impactful.
+ </p> </div> </div> <h4>Bleed, Trim, and Safe Zone</h4> <p> When designing for print, three lines matter: </p> <ol> <li><strong>Bleed Line:</strong> The artwork must extend to this line (usually 0.125" beyond the trim) to
+ avoid white edges after cutting.</li> <li><strong>Trim Line:</strong> Where the card is actually cut.</li> <li><strong>Safe Zone:</strong> Keep all text and logos inside this line (usually 0.125" inside the trim)
+ to ensure nothing gets chopped off.</li> </ol> </div> <div id="marketing" style="margin-bottom: 2rem;" > <h3>4. Strategic Marketing with Business Cards</h3> <p> A business card is more than contact info; it's a marketing tool.
+ </p> <h4>5 Ways to Use Cards to Grow Your Network</h4> <ol> <li><strong>The "Two-Card" Rule:</strong> When meeting someone, give them two cards—one for them, and one for them to pass on to a referral.</li> <li><strong>The Memory Hook:</strong> Write a note on the back (if possible) about your conversation. "Great chatting about [Topic]." This personalizes the connection.</li> <li><strong>Strategic Placement:</strong> Leave cards in coffee shops, community boards, or partner businesses (with permission).</li> <li><strong>Direct Mail Inserts:</strong> Include a card in every package you ship. It adds a personal touch to e-commerce orders.</li> <li><strong>Interactive Elements:</strong> Use QR codes or our <strong>NFC keychains</strong> to bridge the physical and digital worlds.</li> </ol> <h4>Digital vs. Physical: Why You Need Both</h4> <p> While LinkedIn and digital contacts are essential, they lack the intimacy of a physical exchange. A digital contact is easily forgotten in a phone's address book. A physical card on a desk is a persistent
+ visual reminder of your brand. The most effective strategy integrates both: a premium physical card that leads to a robust digital presence via a QR code or NFC tap. </p> </div> <div style="background: #fff5f8; padding: 2rem; border-radius: 12px; border-left: 5px solid var(--secondary);" > <h4>Ready to Elevate Your Brand?</h4> <p style="margin-bottom: 0;" > Now that you understand the science and art behind premium business cards, it's time to create your own.
+ At MaplePrints, we combine expert design, premium materials, and cutting-edge printing technology to deliver cards that you'll be proud to hand out.
+ </p> </div> </div> </div> </section> < !-- Contact Section --> <section id="contact" class="section section-alt" > <div class="container" > <div class="text-center animate-on-scroll" > <h2>Ready to Get Started?</h2> <p>Connect with us today and elevate your professional image</p> </div> <div style="text-align: center; margin-top: 3rem" class="animate-on-scroll" > <div style="
+ background: var(--white);
+              padding: 2rem;
+              border-radius: 12px;
+              box-shadow: 0 8px 25px var(--shadow-light);
+              max-width: 600px;
+              margin: 0 auto;
               ">
-            <h3 style="margin-bottom: 1rem">Quick Start Options</h3>
-            <div style="
-                  display: flex;
-                  gap: 1rem;
-                  justify-content: center;
-                  flex-wrap: wrap;
-                ">
-              <button class="btn btn-primary btn-large" data-whatsapp="existing-design">
-                I Have a Design
-              </button>
-              <button class="btn btn-secondary btn-large" data-whatsapp="need-design">
-                I Need a Design
-              </button>
-            </div>
-            <p style="
-                  margin-top: 1rem;
-                  font-size: 0.9rem;
-                  color: var(--text-secondary);
-                ">
-              Click to connect via WhatsApp • Response within 24 hours
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo">
-        <img src="resources/maple-logo.png" alt="MaplePrints Logo" loading="lazy" width="40" height="40" />
-        MaplePrints
-      </div>
-
-      <div class="footer-tagline">Print Your First Impression</div>
-
-      <div class="footer-links">
-        <a href="/" aria-label="Home">Home</a>
-        <a href="package.html" aria-label="Business Card Packages">Packages</a>
-        <a href="design.html" aria-label="Design Services">Design Services</a>
-        <a href="testimonials.html" aria-label="Customer Testimonials">Testimonials</a>
-        <a href="#faq" aria-label="Frequently Asked Questions">FAQ</a>
-        <a href="#blog" aria-label="Design Tips & Blog">Blog</a>
-        <a href="#contact" aria-label="Contact Us">Contact</a>
-      </div>
-
-      <div class="footer-social">
-        <a href="#" class="social-icon" data-whatsapp="general-inquiry" title="WhatsApp"><svg width="20" height="20"
-            viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-          </svg></a>
-        <a href="https://www.instagram.com/mapleprints.ca/" target="_blank" class="social-icon" title="Instagram"><svg
-            width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-          </svg></a>
-        <a href="https://www.facebook.com/profile.php?id=61578612213043" target="_blank" class="social-icon"
-          title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg></a>
-        <a href="mailto:MaplePrintscanada@gmail.com" class="social-icon" title="Email"><svg width="20" height="20"
-            viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-          </svg></a>
-        <a href="tel:+14378186152" class="social-icon" title="Call"><svg width="20" height="20" viewBox="0 0 24 24"
-            fill="currentColor">
-            <path
-              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-          </svg></a>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 MaplePrints. All rights reserved. | Premium Business
-          Cards with Personal Designer Support
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="main.min.js"></script>
-  <script src="js/index-scripts.min.js"></script>
-</body>
-
-</html>
+ <h3 style="margin-bottom: 1rem" >Quick Start Options</h3> <div style="
+ display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+              ">
+ <button class="btn btn-primary btn-large" data-whatsapp="existing-design" > I Have a Design </button> <button class="btn btn-secondary btn-large" data-whatsapp="need-design" > I Need a Design </button> </div> <p style="
+ margin-top: 1rem;
+              font-size: 0.9rem;
+              color: var(--text-secondary);
+              ">
+ Click to connect via WhatsApp • Response within 24 hours </p> </div> </div> </div> </section> </main> < !-- Footer --> <footer class="footer" > <div class="container" > <div class="footer-logo" > <img src="resources/maple-logo.png" alt="MaplePrints Logo" loading="lazy" width="40" height="40" /> MaplePrints </div> <div class="footer-tagline" >Print Your First Impression</div> <div class="footer-links" > <a href="/" aria-label="Home" >Home</a> <a href="package.html" aria-label="Business Card Packages" >Packages</a> <a href="design.html" aria-label="Design Services" >Design Services</a> <a href="testimonials.html" aria-label="Customer Testimonials" >Testimonials</a> <a href="#faq" aria-label="Frequently Asked Questions" >FAQ</a> <a href="#blog" aria-label="Design Tips & Blog" >Blog</a> <a href="#contact" aria-label="Contact Us" >Contact</a> </div> <div class="footer-social" > <a href="#" class="social-icon" data-whatsapp="general-inquiry" title="WhatsApp" ><svg width="20" height="20"
+              viewBox="0 0 24 24" fill="currentColor" > <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /> </svg></a> <a href="https://www.instagram.com/mapleprints.ca/" target="_blank" class="social-icon" title="Instagram" ><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" > <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /> </svg></a> <a href="https://www.facebook.com/profile.php?id=61578612213043" target="_blank" class="social-icon"
+              title="Facebook" ><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" > <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /> </svg></a> <a href="mailto:MaplePrintscanada@gmail.com" class="social-icon" title="Email" ><svg width="20" height="20"
+              viewBox="0 0 24 24" fill="currentColor" > <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /> </svg></a> <a href="tel:+14378186152" class="social-icon" title="Call" ><svg width="20" height="20" viewBox="0 0 24 24"
+              fill="currentColor" > <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /> </svg></a> </div> <div class="footer-bottom" > <p> &copy; 2025 MaplePrints. All rights reserved. | Premium Business Cards with Personal Designer Support </p> </div> </div> </footer> < !-- JavaScript --> <script src="main.min.js" ></script> <script src="js/index-scripts.min.js" ></script> </body> </html>
