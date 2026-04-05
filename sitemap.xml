@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+    <!-- Homepage - Main Landing Page -->
+    <url>
+        <loc>https://mapleprints.ca/</loc>
+        <lastmod>2025-11-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/maple-logo.png</image:loc>
+            <image:title>MaplePrints Logo - Premium Business Cards Canada</image:title>
+            <image:caption>MaplePrints - Premium business card printing service in Canada with custom design support and fast delivery</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/hero-cards.jpg</image:loc>
+            <image:title>Premium Business Cards with Velvet Finish</image:title>
+            <image:caption>Luxury business cards featuring velvet matte finish, gold foil accents, and UV coating on premium 500 GSM paper</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Package Page - Product Details & Pricing -->
+    <url>
+        <loc>https://mapleprints.ca/package.html</loc>
+        <lastmod>2025-11-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/card-textures/velvet-gold.jpg</image:loc>
+            <image:title>Velvet Matte Business Cards with Gold Foil</image:title>
+            <image:caption>Premium velvet matte finish business cards with elegant gold foil accents on 500 GSM paper</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/card-textures/uv-silver.jpg</image:loc>
+            <image:title>UV Coated Business Cards with Silver Foil</image:title>
+            <image:caption>Luxury UV spot coating business cards with silver foil details for maximum visual impact</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Blog Page - Design Tips & Resources -->
+    <url>
+        <loc>https://mapleprints.ca/blog.html</loc>
+        <lastmod>2025-11-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/blog-images/design-inspiration.jpg</image:loc>
+            <image:title>Business Card Design Inspiration Gallery</image:title>
+            <image:caption>Professional business card design examples and inspiration featuring modern layouts, typography, and premium finishes</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/blog-images/font-guide.jpg</image:loc>
+            <image:title>Typography Guide for Professional Business Cards</image:title>
+            <image:caption>Expert guide to selecting the perfect fonts and typography for impactful business card designs</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://mapleprints.ca/resources/blog-images/foil-uv-tips.jpg</image:loc>
+            <image:title>Foil Stamping and UV Coating Design Tips</image:title>
+            <image:caption>Professional tips and best practices for maximizing the impact of foil stamping and UV coating on business cards</image:caption>
+        </image:image>
+    </url>
+
+</urlset>

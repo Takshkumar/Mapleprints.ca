@@ -1,0 +1,44 @@
+# robots.txt for mapleprints.ca
+# Optimized for SEO best practices
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Explicitly allow AI Search Bots and LLM Crawlers
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+Allow: /
+
+# Disallow temporary and system files
+Disallow: /tmp_*
+Disallow: /*.tmp
+Disallow: /cache/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /video-backups/
+
+# Allow important resources
+Allow: /resources/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.mp4
+Allow: /*.ico
+
+# Sitemap location
+Sitemap: https://mapleprints.ca/sitemap.xml
+
+# Crawl delay (be respectful to servers)
+Crawl-delay: 1
