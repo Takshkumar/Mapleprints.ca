@@ -56,34 +56,37 @@
             box-shadow: 0 10px 20px rgba(255, 64, 129, 0.3);
         }
     </style>
+    <link rel="stylesheet" href="css/nav-styles.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="resources/maple-logo.png" alt="MaplePrints Logo" />
-                MaplePrints
-            </a>
+      <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="logo" aria-label="MaplePrints Home">
+        <img src="resources/maple-logo.png" alt="MaplePrints - Premium Business Cards Canada Logo" width="40" height="40" loading="eager" />
+        MaplePrints
+      </a>
 
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="package.html">Package</a></li>
-                <li><a href="index.html#blog">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li>
-                    <a href="index.html#contact" class="btn btn-primary">Start Your Design</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+      <ul class="nav-menu">
+        <li><a href="/" aria-label="Home">Home</a></li>
+        <li><a href="package.html" aria-label="Business Card Packages">Package</a></li>
+        <li><a href="design.html" aria-label="Design Options">Design</a></li>
+        <li><a href="testimonials.html" aria-label="Testimonials">Testimonials</a></li>
+        <li><a href="blog.html" aria-label="Blog">Blog</a></li>
+        <li><a href="/#contact" aria-label="Contact">Contact</a></li>
+        <li>
+          <a href="/#contact" class="btn btn-primary" data-whatsapp="general-inquiry" aria-label="Start Your Design">Start Your Design</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
     <!-- Error Content -->
     <section class="error-section">

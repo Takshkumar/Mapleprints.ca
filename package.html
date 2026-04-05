@@ -10,7 +10,7 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description"
-    content="Get high quality custom business cards in Canada. Premium package: 1000 cards for $250 with velvet matte, foil/UV, and free NFC keychain." />
+    content="Get high quality custom business cards in Canada. Premium package: packages starting at $199 with velvet matte, foil/UV, and free NFC keychain." />
   <meta name="keywords"
     content="business card packages Canada, premium business cards, custom business card printing, foil business cards, velvet matte cards, NFC business cards Canada, business card design service" />
   <meta name="author" content="MaplePrints" />
@@ -24,7 +24,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Premium Business Cards Package | MaplePrints" />
   <meta property="og:description"
-    content="Get high quality custom business cards in Canada. Premium package: 1000 cards for $250 with velvet matte, foil/UV, and free NFC keychain." />
+    content="Get high quality custom business cards in Canada. Premium package: packages starting at $199 with velvet matte, foil/UV, and free NFC keychain." />
   <meta property="og:url" content="https://mapleprints.ca/package.html" />
   <meta property="og:site_name" content="MaplePrints" />
   <meta property="og:image" content="https://mapleprints.ca/resources/package-og-image.jpg" />
@@ -33,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Premium Business Cards Package | MaplePrints" />
   <meta name="twitter:description"
-    content="Get high quality custom business cards in Canada. Premium package: 1000 cards for $250 with velvet matte, foil/UV, and free NFC keychain." />
+    content="Get high quality custom business cards in Canada. Premium package: packages starting at $199 with velvet matte, foil/UV, and free NFC keychain." />
   <meta name="twitter:image" content="https://mapleprints.ca/resources/package-og-image.jpg" />
 
   <!-- Favicon -->
@@ -60,7 +60,7 @@
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Premium Business Cards - 1000 Cards Package",
-        "description": "Premium business card package: 1000 cards for $250 CAD with velvet matte paper, foil/UV coating options, and 1 FREE NFC keychain. Includes free delivery across Canada.",
+        "description": "Premium business card package: packages starting at $199 CAD with velvet matte paper, foil/UV coating options, and 1 FREE NFC keychain. Includes free delivery across Canada.",
         "brand": {
           "@type": "Brand",
           "name": "MaplePrints"
@@ -74,7 +74,7 @@
           "@type": "Offer",
           "url": "https://mapleprints.ca/package.html",
           "priceCurrency": "CAD",
-          "price": "250",
+          "price": "199",
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
           "seller": {
@@ -172,30 +172,117 @@
   <script src="https://cdn.jsdelivr.net/npm/ogl@1/dist/ogl.umd.js"></script>
 
   <link rel="stylesheet" href="css/package-styles.min.css">
+  <style>
+    .dynamic-pricing-container .quantity-selector {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    .dynamic-pricing-container .quantity-selector.center {
+      justify-content: center;
+    }
+    .dynamic-pricing-container .qty-btn {
+      background: transparent;
+      border: 2px solid rgba(255, 64, 129, 0.5);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .dynamic-pricing-container .qty-btn.active, .dynamic-pricing-container .qty-btn:hover {
+      background: linear-gradient(135deg, #ff4081, #ffd700);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
+    }
+    .dynamic-pricing-container .split-design-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      background: rgba(255, 64, 129, 0.05);
+      padding: 0.75rem;
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+    .dynamic-pricing-container .split-design-option.center {
+      justify-content: center;
+    }
+    .dynamic-pricing-container .split-design-option.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .dynamic-pricing-container .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+      margin-bottom: 0;
+    }
+    .dynamic-pricing-container .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .dynamic-pricing-container .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .dynamic-pricing-container .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    .dynamic-pricing-container input:checked + .slider {
+      background-color: #ff4081;
+    }
+    .dynamic-pricing-container input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+    <link rel="stylesheet" href="css/nav-styles.css">
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
+    <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="resources/maple-logo.png" alt="MaplePrints Logo" />
+      <a href="/" class="logo" aria-label="MaplePrints Home">
+        <img src="resources/maple-logo.png" alt="MaplePrints - Premium Business Cards Canada Logo" width="40" height="40" loading="eager" />
         MaplePrints
       </a>
 
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
 
       <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="package.html" class="active">Package</a></li>
-        <li><a href="index.html#blog">Blog</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="/" aria-label="Home">Home</a></li>
+        <li><a href="package.html" class="active" aria-label="Business Card Packages">Package</a></li>
+        <li><a href="design.html" aria-label="Design Options">Design</a></li>
+        <li><a href="testimonials.html" aria-label="Testimonials">Testimonials</a></li>
+        <li><a href="blog.html" aria-label="Blog">Blog</a></li>
+        <li><a href="/#contact" aria-label="Contact">Contact</a></li>
         <li>
-          <a href="#" class="btn btn-primary" data-whatsapp="general-inquiry">Start Your Design</a>
+          <a href="/#contact" class="btn btn-primary" data-whatsapp="general-inquiry" aria-label="Start Your Design">Start Your Design</a>
         </li>
       </ul>
     </div>
@@ -224,22 +311,39 @@
             expert design support, we've thought of every detail.
           </p>
 
-          <div class="price-display">
-            <div class="current-price">$250</div>
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem">
-              <span class="original-price">$300</span>
-              <span style="font-size: 1rem">New Year Special</span>
+          <div class="dynamic-pricing-container">
+            <div class="price-display">
+              <div class="current-price">$<span class="hero-price-display">299</span></div>
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem">
+                <span class="original-price original-price-display">$349</span>
+                <span style="font-size: 1rem">New Year Special</span>
+              </div>
+              <div class="savings">You Save $50!</div>
             </div>
-            <div class="savings">You Save $50!</div>
-          </div>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-            <button class="btn btn-primary btn-large" data-whatsapp="existing-design">
-              Order Now
-            </button>
-            <button class="btn btn-secondary btn-large" data-whatsapp="need-design">
-              Need Design Help
-            </button>
+            <div class="quantity-selector">
+              <button class="qty-btn" data-qty="500">500 Cards</button>
+              <button class="qty-btn active" data-qty="1000">1000 Cards</button>
+              <button class="qty-btn" data-qty="1500">1500 Cards</button>
+              <button class="qty-btn" data-qty="2000">2000 Cards</button>
+            </div>
+            
+            <div class="split-design-option">
+              <label class="toggle-switch">
+                <input type="checkbox" class="hero-split-checkbox">
+                <span class="slider"></span>
+              </label>
+              <span>Split into 2 designs (e.g. 500/500) - <strong>Free</strong></span>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+              <button class="btn btn-primary btn-large" data-whatsapp="existing-design">
+                Order Now
+              </button>
+              <button class="btn btn-secondary btn-large" data-whatsapp="need-design">
+                Need Design Help
+              </button>
+            </div>
           </div>
         </div>
 
@@ -537,7 +641,7 @@
             flex-wrap: wrap;
           ">
         <button class="btn btn-white btn-large" data-whatsapp="existing-design">
-          Order Now - $250
+          Order Now
         </button>
         <button class="btn btn-white btn-large" data-whatsapp="need-design">
           Get Design Help
@@ -602,6 +706,7 @@
 
   <!-- JavaScript -->
   <script src="main.min.js"></script>
+  <script src="js/dynamic-pricing.js"></script>
   <script>
     // Mobile Menu Toggle
     document.addEventListener("DOMContentLoaded", function () {

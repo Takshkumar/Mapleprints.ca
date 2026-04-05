@@ -128,26 +128,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/design-styles.min.css">
 
     <style>
-        .nav-menu li {
-            width: 100%;
-            text-align: center;
-            padding: 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            margin: 0;
-        }
 
-        .nav-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .nav-menu a {
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-            display: block;
-            width: 100%;
-        }
 
         .path-selection {
             grid-template-columns: 1fr;
@@ -160,7 +144,6 @@
 
         .portfolio-grid {
             grid-template-columns: 1fr;
-        }
         }
 
         /* Animations */
@@ -179,65 +162,39 @@
             display: none !important;
         }
 
-        /* New Year Buttons */
-        body .btn-primary {
-            background: linear-gradient(135deg, #FFD700, #FFA500) !important;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
-        }
 
-        body .btn-primary::before {
-            content: '🎉 ';
-            margin-right: 0;
-        }
-
-        body .btn-primary:hover {
-            background: linear-gradient(135deg, #FFA500, #FFD700) !important;
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5) !important;
-        }
-
-        body .btn-secondary {
-            border-color: #FFD700 !important;
-            color: #FFD700 !important;
-        }
-
-        body .btn-secondary::before {
-            content: '✨ ';
-            margin-right: 0;
-        }
-
-        body .btn-secondary:hover {
-            background: #FFD700 !important;
-            color: #003366 !important;
-        }
     </style>
+    <link rel="stylesheet" href="css/nav-styles.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="resources/maple-logo.png" alt="MaplePrints Logo">
-                MaplePrints
-            </a>
+      <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="logo" aria-label="MaplePrints Home">
+        <img src="resources/maple-logo.png" alt="MaplePrints - Premium Business Cards Canada Logo" width="40" height="40" loading="eager" />
+        MaplePrints
+      </a>
 
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="package.html">Package</a></li>
-                <li><a href="design.html" class="active">Design Options</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="index.html#blog">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="#" class="btn btn-primary" data-whatsapp="general-inquiry">Start Your Design</a></li>
-            </ul>
-        </div>
-    </nav>
+      <ul class="nav-menu">
+        <li><a href="/" aria-label="Home">Home</a></li>
+        <li><a href="package.html" aria-label="Business Card Packages">Package</a></li>
+        <li><a href="design.html" class="active" aria-label="Design Options">Design</a></li>
+        <li><a href="testimonials.html" aria-label="Testimonials">Testimonials</a></li>
+        <li><a href="blog.html" aria-label="Blog">Blog</a></li>
+        <li><a href="/#contact" aria-label="Contact">Contact</a></li>
+        <li>
+          <a href="/#contact" class="btn btn-primary" data-whatsapp="general-inquiry" aria-label="Start Your Design">Start Your Design</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -268,7 +225,7 @@
                     </ul>
 
                     <div class="path-price">
-                        <strong>Package Price: $250</strong><br>
+                        <strong>Package Starting at: $199</strong><br>
                         <small>No additional design fees</small>
                     </div>
 
@@ -292,7 +249,7 @@
 
                     <div class="path-price">
                         <strong>Design Consultation: $20</strong><br>
-                        <small>Fully credited toward your $250 order</small>
+                        <small>Fully credited toward your print order</small>
                     </div>
 
                     <button class="btn btn-secondary btn-large" onclick="showDesignForm()">Start Design Process</button>
@@ -405,7 +362,7 @@
                         <div
                             style="background: var(--bg-primary); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
                             <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Design Service Details</h4>
-                            <p><strong>Consultation Fee: $20</strong> (fully credited toward your $250 order)</p>
+                            <p><strong>Consultation Fee: $20</strong> (fully credited toward your print order)</p>
                             <p>✓ Personal designer assignment</p>
                             <p>✓ Unlimited design revisions</p>
                             <p>✓ WhatsApp direct communication</p>

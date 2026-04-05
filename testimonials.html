@@ -260,67 +260,6 @@
         .grid-3 {
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .logo img {
-            width: 40px;
-            height: 40px;
-            margin-right: 0.5rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--cta-primary);
-        }
-
         /* Mobile Menu Toggle Button */
         .menu-toggle {
             display: none;
@@ -885,98 +824,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
 
-            /* Mobile Navigation */
-            .menu-toggle {
-                display: flex !important;
-                position: relative;
-                z-index: 1002;
-                padding: 8px;
-                cursor: pointer;
-                min-width: 40px;
-                min-height: 40px;
-                justify-content: center;
-                align-items: center;
-                -webkit-tap-highlight-color: transparent;
-            }
-
-            .logo {
-                z-index: 1003;
-            }
-
-            .navbar {
-                padding: 1rem 0;
-            }
-
-            .nav-container {
-                position: relative;
-                padding: 0 15px;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(20px) saturate(180%);
-                -webkit-backdrop-filter: blur(20px) saturate(180%);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 100px;
-                transition: left 0.3s ease;
-                box-shadow: 4px 0 32px rgba(0, 0, 0, 0.12);
-                z-index: 1000;
-                border-right: 1px solid rgba(255, 255, 255, 0.3);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu li {
-                width: 100%;
-                text-align: center;
-                padding: 0;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                margin: 0;
-            }
-
-            .nav-menu li:last-child {
-                border-bottom: none;
-            }
-
-            .nav-menu a {
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
-                display: block;
-                width: 100%;
-            }
-
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .industry-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .testimonial-slide {
-                padding: 2rem 1.5rem;
-            }
-
-            .story-card {
-                padding: 2rem;
-            }
-        }
-
-        /* Animations */
+            /* Animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -988,34 +836,37 @@
             transform: translateY(0);
         }
     </style>
+    <link rel="stylesheet" href="css/nav-styles.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="resources/maple-logo.png" alt="MaplePrints Logo">
-                MaplePrints
-            </a>
+      <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="logo" aria-label="MaplePrints Home">
+        <img src="resources/maple-logo.png" alt="MaplePrints - Premium Business Cards Canada Logo" width="40" height="40" loading="eager" />
+        MaplePrints
+      </a>
 
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
 
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="package.html">Package</a></li>
-                <li><a href="design.html">Design Options</a></li>
-                <li><a href="testimonials.html" class="active">Testimonials</a></li>
-                <li><a href="index.html#blog">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="#" class="btn btn-primary" data-whatsapp="general-inquiry">Start Your Design</a></li>
-            </ul>
-        </div>
-    </nav>
+      <ul class="nav-menu">
+        <li><a href="/" aria-label="Home">Home</a></li>
+        <li><a href="package.html" aria-label="Business Card Packages">Package</a></li>
+        <li><a href="design.html" aria-label="Design Options">Design</a></li>
+        <li><a href="testimonials.html" class="active" aria-label="Testimonials">Testimonials</a></li>
+        <li><a href="blog.html" aria-label="Blog">Blog</a></li>
+        <li><a href="/#contact" aria-label="Contact">Contact</a></li>
+        <li>
+          <a href="/#contact" class="btn btn-primary" data-whatsapp="general-inquiry" aria-label="Start Your Design">Start Your Design</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -1207,266 +1058,13 @@
         </div>
     </section>
 
-    <!-- Success Stories -->
-    <section class="stories-section">
-        <div class="container">
-            <div class="text-center animate-on-scroll">
-                <h2>Success Stories</h2>
-                <p>How premium business cards transformed these professionals' networking success</p>
-            </div>
-
-            <div class="stories-grid">
-                <div class="story-card animate-on-scroll">
-                    <div class="story-header">
-                        <img src="resources/testimonials/customer-1.jpg" alt="Sarah Johnson" class="story-avatar">
-                        <div class="story-info">
-                            <h3>Sarah Johnson</h3>
-                            <div class="story-company">TechStart Inc. - Marketing Director</div>
-                        </div>
-                    </div>
-
-                    <div class="story-challenge">
-                        <h4>The Challenge</h4>
-                        <p>Sarah needed business cards that would make a strong first impression at tech conferences and
-                            investor meetings. Her previous cards looked generic and didn't reflect her company's
-                            innovative brand.</p>
-                    </div>
-
-                    <div class="story-solution">
-                        <h4>Our Solution</h4>
-                        <p>We paired Sarah with a designer who specialized in tech industry branding. They created a
-                            modern design with velvet matte finish and subtle gold foil accents that perfectly balanced
-                            professionalism with innovation.</p>
-                    </div>
-
-                    <div class="story-results">
-                        <h4>The Results</h4>
-                        <p>"My new cards have become conversation starters at every event. I've received compliments
-                            from investors and clients, and the NFC keychains have made networking so much more
-                            efficient. The investment has more than paid for itself in new business opportunities."</p>
-                    </div>
-                </div>
-
-                <div class="story-card animate-on-scroll">
-                    <div class="story-header">
-                        <img src="resources/testimonials/customer-2.jpg" alt="Michael Chen" class="story-avatar">
-                        <div class="story-info">
-                            <h3>Michael Chen</h3>
-                            <div class="story-company">Chen Consulting - Founder</div>
-                        </div>
-                    </div>
-
-                    <div class="story-challenge">
-                        <h4>The Challenge</h4>
-                        <p>As a new consulting firm, Michael needed to establish credibility and trustworthiness
-                            quickly. His homemade business cards weren't reflecting the professional image he wanted to
-                            project.</p>
-                    </div>
-
-                    <div class="story-solution">
-                        <h4>Our Solution</h4>
-                        <p>Our designer worked with Michael to create a classic, trustworthy design with premium
-                            materials. We used a traditional layout with modern touches, including silver foil and
-                            high-quality paper that conveyed expertise and reliability.</p>
-                    </div>
-
-                    <div class="story-results">
-                        <h4>The Results</h4>
-                        <p>"The transformation was immediate. Clients started taking me more seriously from the first
-                            meeting. The quality of my cards speaks to the quality of my work, and I've landed three
-                            major contracts directly attributed to the professional impression my cards create."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industry Reviews -->
-    <section class="industry-section">
-        <div class="container">
-            <div class="text-center animate-on-scroll">
-                <h2>Reviews by Industry</h2>
-                <p>See what professionals in your field are saying</p>
-            </div>
-
-            <div class="industry-tabs animate-on-scroll">
-                <div class="industry-tab active" data-industry="technology">Technology</div>
-                <div class="industry-tab" data-industry="finance">Finance</div>
-                <div class="industry-tab" data-industry="healthcare">Healthcare</div>
-                <div class="industry-tab" data-industry="real-estate">Real Estate</div>
-                <div class="industry-tab" data-industry="consulting">Consulting</div>
-            </div>
-
-            <div class="industry-content active" id="technology">
-                <div class="industry-reviews">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-3.jpg" alt="Alex Thompson" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Alex Thompson</h4>
-                                <div class="review-company">Software Engineer</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Perfect for the tech industry! The modern design and NFC keychains really
-                            set me apart at conferences. Professional and innovative.</p>
-                        <div class="review-date">September 2024</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-1.jpg" alt="Priya Patel" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Priya Patel</h4>
-                                <div class="review-company">Product Manager</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">The design perfectly captures our brand's innovative spirit. The quality
-                            is exceptional and the NFC feature is brilliant for networking.</p>
-                        <div class="review-date">August 2024</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="industry-content" id="finance">
-                <div class="industry-reviews">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-2.jpg" alt="Robert Kim" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Robert Kim</h4>
-                                <div class="review-company">Financial Advisor</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Professional and trustworthy appearance. The gold foil adds the perfect
-                            touch of elegance that my clients appreciate.</p>
-                        <div class="review-date">October 2024</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-1.jpg" alt="Jennifer Walsh" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Jennifer Walsh</h4>
-                                <div class="review-company">Investment Banker</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Classic design that conveys trust and professionalism. The quality is
-                            outstanding and service is impeccable.</p>
-                        <div class="review-date">September 2024</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="industry-content" id="healthcare">
-                <div class="industry-reviews">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-3.jpg" alt="Dr. Sarah Chen" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Dr. Sarah Chen</h4>
-                                <div class="review-company">Dentist</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Clean, professional design that instills confidence in patients. The
-                            quality is exceptional and delivery was prompt.</p>
-                        <div class="review-date">October 2024</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-2.jpg" alt="Dr. Michael Rodriguez"
-                                class="review-avatar">
-                            <div class="review-info">
-                                <h4>Dr. Michael Rodriguez</h4>
-                                <div class="review-company">Physician</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Professional appearance that patients trust. The designer understood the
-                            healthcare industry's requirements perfectly.</p>
-                        <div class="review-date">September 2024</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="industry-content" id="real-estate">
-                <div class="industry-reviews">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-1.jpg" alt="Lisa Thompson" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Lisa Thompson</h4>
-                                <div class="review-company">Real Estate Agent</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Luxurious feel that matches the high-end properties I represent. Clients
-                            are always impressed with the quality.</p>
-                        <div class="review-date">October 2024</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-3.jpg" alt="Mark Johnson" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Mark Johnson</h4>
-                                <div class="review-company">Real Estate Broker</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Premium quality that reflects the luxury market I serve. The NFC
-                            keychains are perfect for tech-savvy clients.</p>
-                        <div class="review-date">August 2024</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="industry-content" id="consulting">
-                <div class="industry-reviews">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-2.jpg" alt="Michael Chen" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Michael Chen</h4>
-                                <div class="review-company">Management Consultant</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Classic design that establishes credibility and trust. The quality speaks
-                            to the quality of my consulting services.</p>
-                        <div class="review-date">September 2024</div>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img src="resources/testimonials/customer-1.jpg" alt="Amanda Foster" class="review-avatar">
-                            <div class="review-info">
-                                <h4>Amanda Foster</h4>
-                                <div class="review-company">Legal Consultant</div>
-                            </div>
-                        </div>
-                        <div class="review-rating">★★★★★</div>
-                        <p class="review-text">Professional appearance that clients trust. The designer perfectly
-                            captured the authoritative yet approachable image I needed.</p>
-                        <div class="review-date">October 2024</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Join Our Satisfied Customers?</h2>
             <p>Experience the MaplePrints difference and elevate your professional image today</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-white btn-large" data-whatsapp="existing-design">Order Now - $250</button>
+                <button class="btn btn-white btn-large" data-whatsapp="existing-design">Order Now</button>
                 <button class="btn btn-secondary btn-large" data-whatsapp="need-design">Get Design Help</button>
             </div>
         </div>

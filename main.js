@@ -881,7 +881,7 @@ Please let me know about rush order options.`,
       message += `I need help designing premium business cards.\n\n`;
     }
 
-    message += `Package: 1000 Business Cards - $250\n`;
+    message += `Package: Premium Business Cards\n`;
 
     if (name) message += `Name: ${name}\n`;
     if (whatsapp) message += `WhatsApp: ${whatsapp}\n`;
