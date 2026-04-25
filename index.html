@@ -449,7 +449,11 @@
           video.muted = true;
           video.loop = true;
           video.playsInline = true;
-          video.preload = "metadata";
+          video.autoplay = true;
+          video.preload = "auto";
+          video.setAttribute("muted", "");
+          video.setAttribute("playsinline", "");
+          video.setAttribute("autoplay", "");
           item.appendChild(video);
           this.container.appendChild(item);
         });
